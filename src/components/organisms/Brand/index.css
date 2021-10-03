@@ -1,0 +1,84 @@
+.brand-wrapper {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	background: url('../../../../src/images/background/bgc01.jpg');
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+
+	& .up-btn {
+		width: 200px;
+		height: 200px;
+		position: fixed;
+		right: 0;
+		bottom: 0;
+		z-index: 99;
+		background: url('../../../../src/images/gototop.png');
+		background-size: cover;
+		background-position: center;
+		background-repeat: no-repeat;
+		cursor: pointer;
+		transform: scale(0.5);
+		transition: all 0.5s;
+
+		@media screen and (--phone), screen and (--tablet) {
+			display: none;
+		}
+	}
+
+	& .up-btn:hover {
+		transform: rotate(-45deg) scale(0.8);
+	}
+
+	& .brand-container {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		width: 100%;
+
+		& .banner {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			width: 100%;
+			height: 600px;
+			background: url('../../../../src/images/background/bgc-common.jpg');
+			background-size: 100%;
+			background-position: center;
+			background-repeat: no-repeat;
+
+			@media screen and (--tablet) {
+				height: 80vw;
+				background-size: 200%;
+				background-position: center -70px;
+			}
+
+			@media screen and (--phone) {
+				height: 60vw;
+				background-size: 200%;
+				background-position: center -70px;
+			}
+
+			& h1 {
+				position: relative;
+				top: -50px;
+				font-size: 70px;
+				font-weight: 900;
+				color: #fff;
+
+				@media screen and (--tablet) {
+					top: 2vw;
+					font-size: 60px;
+				}
+
+				@media screen and (--phone) {
+					top: 4vw;
+					font-size: 30px;
+				}
+			}
+		}
+	}
+}

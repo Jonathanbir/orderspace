@@ -1,0 +1,119 @@
+.news-content {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	position: relative;
+	top: 64px;
+	width: 50%;
+	height: 300px;
+	box-shadow: 0 0 0 10px #f5f5f5, 3px 3px 12px 12px #333;
+
+	@media screen and (--tablet), screen and (--phone) {
+		position: initial;
+		width: 100%;
+		height: auto;
+		margin-bottom: 10vw;
+	}
+
+	& .img {
+		position: absolute;
+		left: 0;
+		width: 200px;
+		height: 300px;
+		background-size: cover;
+		background-position: center;
+		background-repeat: no-repeat;
+
+		@media screen and (--tablet) {
+			position: initial;
+			width: 100%;
+			height: 100vw;
+		}
+
+		@media screen and (--phone) {
+			position: initial;
+		}
+	}
+
+	& > h3 {
+		position: absolute;
+		right: 0;
+		width: 50%;
+		font-family: 'Noto Sans TC', 'PingFangTC-Regular', 'Microsoft JhengHei', 'Roboto', sans-serif;
+		font-size: 30px;
+		text-align: center;
+		padding: 20px;
+		border: 1px solid rgb(177, 177, 177);
+		background-color: #fff;
+
+		@media screen and (--tablet) {
+			position: initial;
+			width: 80%;
+		}
+
+		@media screen and (--phone) {
+			position: initial;
+			width: 30%;
+		}
+	}
+
+	& > p {
+		position: absolute;
+		right: 0;
+		bottom: 0;
+		width: 50%;
+		letter-spacing: normal;
+		color: #fff;
+		margin-top: 20px;
+		padding: 20px;
+		box-shadow: 0px 3px 20px #333;
+		background: #191919;
+
+		@media screen and (--tablet) {
+			position: initial;
+			width: 80%;
+		}
+
+		@media screen and (--phone) {
+			position: initial;
+			width: 30%;
+		}
+	}
+
+	& .more-button {
+		position: absolute;
+		bottom: -50px;
+		color: #fff;
+		background-color: #000;
+		border: 2px solid #fff;
+		border-radius: initial;
+		padding: 5px 15px;
+		margin: 15px;
+
+		@media screen and (--tablet), screen and (--phone) {
+			position: initial;
+		}
+	}
+}
+
+.news1 {
+	position: relative;
+	left: -50px;
+}
+
+.news2 {
+	position: relative;
+	top: 130px;
+	right: -50px;
+}
+
+.news3 {
+	position: relative;
+	left: -50px;
+}
+
+.news4 {
+	position: relative;
+	top: 100px;
+	right: -50px;
+}

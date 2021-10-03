@@ -1,0 +1,38 @@
+.shop-cards-group {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	background: linear-gradient(0deg, hsla(0, 50%, 0%, 0.2), hsla(0, 50%, 0%, 0.1)),
+		url('../../../../src/images/background/bgc05.jpg');
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+
+	& h1 {
+		font-size: 50px;
+		font-weight: 900;
+		line-height: 40px;
+		text-align: center;
+		padding: 30px;
+		color: #fff;
+	}
+
+	& .shop-container {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: 100%;
+
+		& .product-container {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: center;
+			align-items: center;
+			width: 800px;
+
+			@media screen and (--tablet), screen and (--phone) {
+				width: 100%;
+			}
+		}
+	}
+}

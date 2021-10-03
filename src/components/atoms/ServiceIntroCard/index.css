@@ -1,0 +1,114 @@
+/* stylelint-disable no-descending-specificity */
+
+.service-intro-card {
+	width: 352px;
+	height: 240px;
+	padding: 32px;
+	border-radius: 0 80px 0 0;
+	box-shadow: 0 2px 16px 0 rgba(44, 44, 44, 0.16);
+	background-color: white;
+	transform: scale(0.73);
+	margin: 20px auto;
+	opacity: 0.6;
+	transition: all 0.3s;
+	cursor: pointer;
+
+	&.center-selected {
+		opacity: 1;
+		transform: scale(1);
+		border: 1px solid var(--primary);
+
+		@media screen and (--tablet), screen and (--phone) {
+			border: none;
+		}
+	}
+
+	&.center-left-selected {
+		opacity: 0.8;
+		transform: scale(0.84);
+		margin-right: 40px;
+
+		@media screen and (--tablet), screen and (--phone) {
+			transform: scale(1);
+			margin-right: 0;
+		}
+	}
+
+	&.center-right-selected {
+		opacity: 0.8;
+		transform: scale(0.84);
+		margin-left: 40px;
+
+		@media screen and (--tablet), screen and (--phone) {
+			transform: scale(1);
+			margin-left: 0;
+		}
+	}
+
+	&.svy {
+		background-color: #fbfcf8;
+
+		& > h3 {
+			color: var(--primary);
+		}
+	}
+
+	&.hide {
+		display: none;
+	}
+
+	@media screen and (--tablet), screen and (--phone) {
+		opacity: 1;
+		width: calc(100vw - 40px);
+		height: calc((100vw - 40px) * 0.64);
+		padding: 20px 24px;
+		margin: 0 10px;
+		transform: scale(1);
+	}
+
+	& > div {
+		width: 64px;
+		height: 64px;
+		background-position: center;
+		background-repeat: no-repeat;
+		background-size: contain;
+	}
+
+	& > h3 {
+		margin-top: 16px;
+		font-size: 24px;
+		font-weight: bold;
+		font-stretch: normal;
+		font-style: normal;
+		line-height: 1.33;
+		letter-spacing: 1.5px;
+		color: var(--dark-black);
+	}
+
+	& > p {
+		/* stylelint-disable-next-line value-no-vendor-prefix */
+		display: -webkit-box;
+
+		/* autoprefixer: off */
+		/* stylelint-disable-next-line property-no-vendor-prefix */
+		-webkit-box-orient: vertical;
+
+		/* autoprefixer: on */
+		-webkit-line-clamp: 2;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		width: 288px;
+		margin-top: 16px;
+		font-size: 16px;
+		font-weight: normal;
+		font-stretch: normal;
+		font-style: normal;
+		line-height: 1.5;
+		letter-spacing: normal;
+		color: #2c2c2c;
+
+		@media screen and (--tablet), screen and (--phone) {
+			letter-spacing: -0.1;
+		}
+	}
+}

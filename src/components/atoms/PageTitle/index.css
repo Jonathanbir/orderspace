@@ -1,0 +1,39 @@
+.page-title {
+	text-align: center;
+
+	& > h1 {
+		font-size: 32px;
+		line-height: 1.25;
+		font-weight: bold;
+		letter-spacing: 2px;
+		margin: 0;
+
+		&:first-child {
+			font-family: 'Montserrat', sans-serif;
+			color: var(--primary);
+		}
+
+		&:nth-child(2) {
+			color: var(--dark-black);
+			margin-top: 4px;
+		}
+	}
+
+	@media screen and (--phone) {
+		& > h1 {
+			line-height: 1.25;
+
+			&:first-child {
+				font-size: 24px;
+				line-height: 1.33;
+				letter-spacing: 1px;
+			}
+
+			&:nth-child(2) {
+				font-size: 32px;
+				line-height: 1.25;
+				letter-spacing: 2px;
+			}
+		}
+	}
+}

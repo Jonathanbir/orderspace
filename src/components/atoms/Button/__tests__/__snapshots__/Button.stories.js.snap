@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`__interactive 1`] = `
+<DocumentFragment>
+  <button
+    class="button normal medium primary"
+    type="button"
+  >
+    <div>
+      觀看更多
+    </div>
+  </button>
+</DocumentFragment>
+`;
+
+exports[`button link 1`] = `
+<DocumentFragment>
+  <a
+    class="button link normal primary"
+    href="/test"
+    role="button"
+    tabindex="0"
+    target="_self"
+  >
+    <div>
+      前往查看
+    </div>
+  </a>
+</DocumentFragment>
+`;

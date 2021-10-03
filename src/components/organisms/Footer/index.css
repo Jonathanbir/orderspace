@@ -1,0 +1,147 @@
+/* stylelint-disable no-descending-specificity */
+
+.footer {
+	width: 100%;
+	color: #f5f5f5;
+	background-color: #191919;
+	border-bottom: 2px solid var(--primary);
+	padding: 80px;
+	padding-bottom: 24px;
+	position: relative;
+
+	&::after {
+		content: '';
+		position: absolute;
+		top: 4vw;
+		right: 4vw;
+		width: 20vw;
+		height: 366px;
+		background-image: url('../../../images/index/pngtree—astronauts\ in\ cartoon\ space_4282533.png');
+		background-repeat: no-repeat;
+		background-size: cover;
+		background-position: center;
+		opacity: 0.4;
+
+		@media screen and (--tablet), screen and (--phone) {
+			top: 40vw;
+			right: 0;
+		}
+	}
+
+	& a {
+		color: #f5f5f5;
+		-webkit-tap-highlight-color: transparent;
+	}
+
+	& h5,
+	& p {
+		margin: 0;
+		font-size: 16px;
+		line-height: 1.5;
+	}
+
+	& > .content {
+		display: grid;
+		margin-bottom: 104px;
+		grid-auto-flow: column;
+		grid-template-columns: 1fr 1fr;
+
+		@media screen and (--tablet), screen and (--phone) {
+			display: block;
+		}
+
+		& .media-icon {
+			margin: 10px;
+		}
+
+		& h5 {
+			font-weight: bold;
+			letter-spacing: 1px;
+			margin-bottom: 16px;
+		}
+
+		& p:not(:last-child) {
+			margin-bottom: 12px;
+		}
+
+		& p {
+			margin: 20px auto;
+		}
+
+		& p > a {
+			font-size: 14px;
+			padding: 10px;
+			color: #000;
+			background-color: #fff;
+			transition: all 0.5s ease-in-out;
+		}
+
+		& > div {
+			&:first-child {
+				display: flex;
+				border-right: 1px solid var(--gray-phase-1);
+
+				@media screen and (--tablet) {
+					border-right: none;
+				}
+
+				& > div {
+					width: calc(100% / 3);
+				}
+			}
+
+			&:nth-child(2) {
+				padding-left: 80px;
+
+				@media screen and (--tablet) {
+					padding-left: initial;
+				}
+			}
+		}
+	}
+
+	& > .copyright {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+
+	@media screen and (--phone) {
+		padding: 40px 20px 24px 20px;
+
+		&::after {
+			top: 20vw;
+			right: 0;
+			width: 200px;
+			height: 200px;
+		}
+
+		& > .content {
+			grid-auto-flow: row;
+			grid-template-columns: 1fr;
+			margin-bottom: 68px;
+
+			& > div {
+				&:first-child {
+					flex-wrap: wrap;
+					border-right: none;
+					border-bottom: 1px solid var(--gray-phase-1);
+					padding-bottom: 40px;
+
+					& > div {
+						width: 100%;
+
+						&:not(:last-child) {
+							margin-bottom: 40px;
+						}
+					}
+				}
+
+				&:nth-child(2) {
+					padding-left: 0;
+					padding-top: 40px;
+				}
+			}
+		}
+	}
+}

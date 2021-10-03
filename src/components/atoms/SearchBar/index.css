@@ -1,0 +1,154 @@
+/* stylelint-disable no-descending-specificity */
+.search-location-bar {
+	display: flex;
+	justify-content: flex-end;
+
+	& > .search-Mobile {
+		@media screen and (--tablet), screen and (--phone) {
+			display: none;
+		}
+	}
+
+	& .input {
+		display: flex;
+		height: 40px;
+		align-items: center;
+		margin-left: 16px;
+		border: 1px solid var(--gray-phase-2);
+		border-radius: 8px;
+		padding: 0 14px;
+		background-color: white;
+		cursor: pointer;
+
+		@media screen and (--tablet), screen and (--phone) {
+			width: calc(100vw - 117px);
+			margin-left: initial;
+		}
+	}
+
+	& input[type='text'] {
+		border: 0;
+		padding: 0;
+		opacity: 1;
+		margin-left: 8px;
+		width: calc(100% - 30px);
+		transition: 0.3s all ease-in-out;
+
+		@media screen and (--tablet), screen and (--phone) {
+			transition: none;
+		}
+
+		&::placeholder {
+			color: var(--gray-phase-2);
+		}
+	}
+
+	& > .submit {
+		transition: 0.3s all ease-in-out;
+		border-radius: 8px;
+		color: white;
+		margin-left: 16px;
+
+		@media screen and (--tablet), screen and (--phone) {
+			transition: none;
+			margin-left: 3.2vw;
+		}
+
+		& > div {
+			padding: 0 16px;
+		}
+	}
+
+	&.active {
+		& > button:first-child {
+			border: 1px solid var(--primary);
+
+			& input[type='text'] {
+				margin-left: 8px;
+				width: calc(100% - 30px);
+			}
+		}
+	}
+
+	@media screen and (--phone) {
+		& > .show-btn {
+			display: block;
+		}
+	}
+}
+
+.search-bar {
+	display: flex;
+
+	& button:first-child {
+		display: flex;
+		height: 40px;
+		align-items: center;
+		margin-left: 16px;
+		border: 1px solid var(--gray-phase-2);
+		border-radius: 8px;
+		padding: 0 14px;
+		background-color: white;
+		cursor: pointer;
+	}
+
+	& input[type='text'] {
+		border: 0;
+		padding: 0;
+		opacity: 0;
+		transition: 0.3s all ease-in-out;
+		width: 0;
+
+		@media screen and (--tablet), screen and (--phone) {
+			transition: none;
+		}
+
+		&::placeholder {
+			color: var(--gray-phase-2);
+		}
+	}
+
+	& > .submit {
+		transition: 0.3s all ease-in-out;
+		border-radius: 8px;
+		color: white;
+		margin-left: 16px;
+		opacity: 0;
+
+		@media screen and (--tablet), screen and (--phone) {
+			transition: none;
+		}
+
+		& > div {
+			padding: 0 16px;
+		}
+	}
+
+	&.active {
+		& > button:first-child {
+			border: 1px solid var(--primary);
+
+			& input[type='text'] {
+				opacity: 1;
+				margin-left: 8px;
+				width: calc(100% - 30px);
+			}
+		}
+
+		& > .submit {
+			opacity: 1;
+		}
+	}
+
+	@media screen and (--phone) {
+		& > .submit {
+			display: none;
+		}
+
+		&.active {
+			& button:first-child {
+				width: calc(100vw - 104px);
+			}
+		}
+	}
+}

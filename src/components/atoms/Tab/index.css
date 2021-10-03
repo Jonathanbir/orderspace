@@ -1,0 +1,87 @@
+.tab-wrapper {
+	& .container {
+		display: flex;
+		position: relative;
+		margin: 0;
+		padding: 0;
+		list-style: none;
+
+		& .tab-item {
+			width: 100%;
+			font-size: 20px;
+			font-weight: 900;
+			text-align: center;
+			background-color: rgba(105, 105, 105, 1);
+			color: #fff;
+			border: 1px solid #fff;
+			padding: 20px 0px;
+			cursor: pointer;
+			transition: all 0.3s ease-in-out;
+			font-family: 'Noto Sans TC', sans-serif;
+
+			@media screen and (--tablet), screen and (--phone) {
+				font-size: 15px;
+			}
+
+			&.selected {
+				color: #fff;
+				background: rgb(10, 10, 77);
+				cursor: pointer;
+			}
+		}
+
+		& .slider {
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			height: 2px;
+			background-color: #fff;
+			transition: all 0.2s ease-in-out;
+		}
+	}
+}
+
+.product-tab {
+	width: 100%;
+	margin: auto;
+
+	& .container {
+		display: flex;
+		position: relative;
+		margin: 0;
+		padding: 0;
+		list-style: none;
+
+		& .tab-item {
+			width: 100%;
+			font-size: 20px;
+			font-weight: 900;
+			text-align: center;
+			color: #000;
+			border: 1px solid #999;
+			background-color: #aaa;
+			padding: 20px 30px;
+			transition: all 0.3s ease-in-out;
+
+			@media screen and (--tablet), screen and (--phone) {
+				font-size: 7px;
+				padding: 20px 10px;
+			}
+
+			&.selected {
+				color: #fff;
+				background: #000;
+				cursor: pointer;
+			}
+		}
+
+		& .slider {
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			height: 2px;
+			background-color: #fff;
+			transition: all 0.2s ease-in-out;
+		}
+	}
+}

@@ -1,0 +1,47 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`__interactive 1`] = `
+<DocumentFragment>
+  <div
+    class="wrapper"
+  >
+    <test-file-stub />
+    <div
+      class="pageWrapper activePage showPage"
+      role="button"
+      tabindex="0"
+    >
+      1
+    </div>
+    <div
+      class="pageWrapper showPage"
+      role="button"
+      tabindex="0"
+    >
+      2
+    </div>
+    <div
+      class="pageWrapper showPage"
+      role="button"
+      tabindex="0"
+    >
+      3
+    </div>
+    <div
+      class="pageWrapper showPage"
+      role="button"
+      tabindex="0"
+    >
+      4
+    </div>
+    <div
+      class="pageWrapper showPage"
+      role="button"
+      tabindex="0"
+    >
+      5
+    </div>
+    <test-file-stub />
+  </div>
+</DocumentFragment>
+`;

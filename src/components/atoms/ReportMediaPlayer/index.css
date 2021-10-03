@@ -1,0 +1,68 @@
+.reports-media-player {
+	& > .video-detail {
+		display: flex;
+		position: relative;
+		align-items: center;
+		justify-content: space-between;
+		margin-top: 16px;
+		margin-bottom: 12px;
+
+		& > .video-sub-title {
+			opacity: 0;
+			transition: 0.3s ease-in-out;
+			position: absolute;
+			z-index: 99;
+			top: -96px;
+			padding: 16px 24px;
+			font-size: 16px;
+			font-weight: 500;
+			font-stretch: normal;
+			font-style: normal;
+			line-height: 1.5;
+			letter-spacing: normal;
+			text-align: justify;
+			color: white;
+			background-color: rgba(44, 44, 44, 0.48);
+		}
+
+		& > span {
+			font-size: 14px;
+			font-weight: normal;
+			font-stretch: normal;
+			font-style: normal;
+			line-height: 1.57;
+			letter-spacing: normal;
+			color: var(--gray-phase-1);
+		}
+	}
+
+	& > .video-wrapper {
+		max-height: 306px;
+
+		@media screen and (--phone) {
+			max-height: 248px;
+		}
+
+		& > div {
+			border-radius: 4px;
+		}
+
+		&:hover {
+			& + .video-detail {
+				& > .video-sub-title {
+					opacity: 1;
+				}
+			}
+		}
+	}
+
+	& > .video-title {
+		font-size: 24px;
+		font-weight: bold;
+		font-stretch: normal;
+		font-style: normal;
+		line-height: 1.33;
+		letter-spacing: normal;
+		color: var(--dark-black);
+	}
+}

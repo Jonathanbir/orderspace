@@ -1,0 +1,19 @@
+.tag {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	padding: 0 16px;
+	height: 32px;
+	border-radius: 0 12px 0 0;
+	border: solid 2px var(--primary);
+	font-family: 'Noto Sans TC', sans-serif;
+	font-size: 14px;
+	font-weight: 500;
+	font-stretch: normal;
+	font-style: normal;
+	line-height: 1.57;
+	letter-spacing: normal;
+	color: var(--dark-black);
+	box-sizing: border-box;
+	cursor: pointer;
+}

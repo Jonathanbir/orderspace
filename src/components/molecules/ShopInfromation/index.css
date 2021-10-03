@@ -1,0 +1,216 @@
+.shop-infromation-content {
+	display: flex;
+	flex-direction: column;
+
+	& .information-content {
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		margin: 20px auto;
+
+		@media screen and (--tablet), screen and (--phone) {
+			flex-direction: column;
+		}
+
+		& .image-content {
+			display: flex;
+			flex-direction: column;
+			width: 500px;
+
+			@media screen and (--tablet), screen and (--phone) {
+				width: 100%;
+			}
+		}
+
+		& .text-content {
+			display: flex;
+			flex-direction: column;
+			width: 400px;
+			margin: 15px;
+
+			@media screen and (--tablet), screen and (--phone) {
+				width: 100%;
+				margin: 15px auto;
+			}
+
+			& .select-box {
+				display: flex;
+				flex-direction: row;
+				justify-content: center;
+				background-color: rgb(177, 193, 214);
+				border-radius: 5px;
+				width: 100%;
+				font-size: 14px;
+				text-align: center;
+				padding: 10px;
+				margin-top: 3px;
+
+				& span {
+					background: rgb(177, 193, 214);
+					color: #151515;
+					width: 40%;
+					font-size: 20px;
+				}
+
+				& select {
+					width: 50%;
+					font-size: 20px;
+				}
+			}
+
+			& a {
+				display: block;
+				font-family: 'Gloria Hallelujah', cursive;
+				font-size: 20px;
+				margin: 18px auto;
+				padding: 5px 40px;
+				white-space: nowrap;
+				color: #fff;
+				background-color: #000;
+				border: 1px solid #fff;
+				border-radius: 10px;
+				transition: all 0.3s ease-in-out;
+			}
+
+			& a:hover {
+				color: #000;
+				background-color: #fff;
+			}
+		}
+	}
+	& .recommend-content {
+		& > div > div {
+			width: 50%;
+			margin: auto;
+
+			@media screen and (--tablet), screen and (--phone) {
+				width: 100%;
+			}
+		}
+
+		& h3 {
+			width: 50%;
+			margin: auto;
+			font-size: 30px;
+			text-align: center;
+			color: #fff;
+			border: 1px solid #fff;
+			padding: 20px 0;
+
+			@media screen and (--tablet), screen and (--phone) {
+				width: 100%;
+			}
+		}
+	}
+
+	& h2 {
+		font-size: 50px;
+		font-weight: 900;
+		line-height: 40px;
+		text-align: center;
+		padding: 30px;
+		white-space: nowrap;
+		background-color: rgb(177, 193, 214);
+		color: #000;
+	}
+
+	& p {
+		padding: 20px;
+		color: #fff;
+	}
+
+	& .information-price {
+		text-align: center;
+		text-shadow: 2.5px 1px #fff;
+		font-family: 'Gloria Hallelujah', cursive;
+		font-size: 25px;
+		padding: 20px;
+		margin: 20px 0;
+		background-color: #f5f5f5;
+		color: #a0f;
+	}
+	& .control-button {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		width: 64px;
+		height: 64px;
+		border: solid 2px #cbd8aa;
+		border-radius: 100%;
+		background-color: #000;
+		cursor: pointer;
+		transition: border 0.3s;
+		position: absolute;
+		z-index: 1;
+		top: 240px;
+		outline: none;
+		padding: 0;
+		margin: 0;
+		box-shadow: none;
+
+		@media screen and (max-width: 1312px), screen and (--tablet), screen and (--phone) {
+			width: 50px;
+			height: 50px;
+		}
+
+		@media screen and (--tablet), screen and (--phone) {
+			width: 64px;
+			height: 64px;
+			top: auto;
+			bottom: -66px;
+		}
+
+		& svg {
+			min-width: 16px;
+			min-height: 16px;
+
+			& > path {
+				transition: fill 0.3s;
+			}
+		}
+
+		&:hover {
+			border: solid 2px var(--primary);
+
+			& svg > path {
+				fill: var(--primary);
+			}
+
+			@media screen and (--tablet), screen and (--phone) {
+				border: solid 2px #cbd8aa;
+			}
+		}
+
+		&:active {
+			opacity: 1;
+
+			@media screen and (--tablet), screen and (--phone) {
+				opacity: 1;
+			}
+		}
+
+		&.prev {
+			left: -80px;
+
+			@media screen and (max-width: 1312px), screen and (--tablet), screen and (--phone) {
+				left: -50px;
+			}
+
+			@media screen and (--tablet), screen and (--phone) {
+				left: 16px;
+			}
+		}
+
+		&.next {
+			right: -80px;
+
+			@media screen and (max-width: 1312px), screen and (--tablet), screen and (--phone) {
+				right: -50px;
+			}
+
+			@media screen and (--tablet), screen and (--phone) {
+				right: 16px;
+			}
+		}
+	}
+}

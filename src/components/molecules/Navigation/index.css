@@ -1,0 +1,177 @@
+.nav {
+	display: flex;
+	justify-content: center;
+
+	@media screen and (--tablet), screen and (--phone) {
+		display: none;
+		position: relative;
+
+		&.active {
+			display: block;
+			width: 104px;
+			position: static;
+			margin: 0 auto;
+			padding-top: 127px;
+		}
+	}
+
+	& > div {
+		display: flex;
+		align-items: center;
+		height: 80px;
+
+		@media screen and (--tablet), screen and (--phone) {
+			display: block;
+			height: auto;
+		}
+
+		& > .item {
+			display: flex;
+			width: 82px;
+			height: 100%;
+			align-items: center;
+			justify-content: center;
+			position: relative;
+
+			@media screen and (--tablet), screen and (--phone) {
+				flex-wrap: wrap;
+				width: auto;
+				text-align: center;
+			}
+
+			& a {
+				cursor: pointer;
+				font-size: 16px;
+				font-weight: 500;
+				line-height: 1.5;
+				letter-spacing: 0.4px;
+				color: #fff;
+				-webkit-tap-highlight-color: transparent;
+
+				&:hover {
+					font-weight: bold;
+				}
+
+				@media screen and (--tablet), screen and (--phone) {
+					font-size: 20px;
+
+					&.more-btn {
+						position: relative;
+
+						&::after {
+							content: '';
+							background-image: url('../../../images/navitem-active.png');
+							background-repeat: no-repeat;
+							background-position: center;
+							background-size: contain;
+							width: 16px;
+							height: 100%;
+							position: absolute;
+							top: 0;
+							margin-left: 8px;
+							transition: 0.3s;
+						}
+					}
+				}
+			}
+
+			&:not(:last-child) {
+				margin-right: 24px;
+
+				@media screen and (--tablet), screen and (--phone) {
+					margin-right: 0;
+					margin-bottom: 40px;
+				}
+			}
+
+			& > .active-icon {
+				display: none;
+			}
+
+			& > div {
+				position: absolute;
+				padding-top: 12px;
+				top: 63px;
+				left: -32px;
+
+				@media screen and (--tablet), screen and (--phone) {
+					padding-top: 0;
+					position: static;
+				}
+
+				& > ul {
+					display: none;
+					width: 146px;
+					text-align: center;
+					background-color: white;
+					padding: 24px 40px;
+					border-radius: 8px;
+					box-shadow: 0 2px 16px 0 rgba(44, 44, 44, 0.16);
+					transition: background-color 0.3s;
+
+					@media screen and (--tablet), screen and (--phone) {
+						display: none;
+						width: auto;
+						padding: 0;
+						text-align: unset;
+						box-shadow: unset;
+					}
+
+					& > li {
+						list-style: none;
+
+						&:not(:last-child) {
+							margin-bottom: 19px;
+
+							@media screen and (--tablet), screen and (--phone) {
+								margin-bottom: 0;
+							}
+						}
+
+						&:hover {
+							& > a {
+								position: relative;
+								color: var(--primary);
+							}
+						}
+
+						@media screen and (--tablet), screen and (--phone) {
+							margin-top: 24px;
+
+							& > a {
+								font-size: 16px;
+								color: var(--gray);
+							}
+						}
+					}
+				}
+			}
+
+			@media screen and (--tablet), screen and (--phone) {
+				&:not(.item-active) {
+					& > ul {
+						display: none;
+					}
+				}
+
+				&.item-active {
+					& > a {
+						color: var(--primary);
+
+						&.more-btn {
+							&::after {
+								transform: rotate(-180deg);
+							}
+						}
+					}
+
+					& > div {
+						& > ul {
+							display: block;
+						}
+					}
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,21 @@
+.reports-graphic-group {
+	margin: auto;
+	margin-top: 80px;
+	width: 90vw;
+	max-width: 1120px;
+
+	@media screen and (--phone) {
+		margin-top: 64px;
+	}
+
+	& > .report-content {
+		margin-top: 40px;
+
+		& > a {
+			& > div {
+				width: 100%;
+				margin-bottom: 32px;
+			}
+		}
+	}
+}

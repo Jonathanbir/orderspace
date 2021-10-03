@@ -1,0 +1,5 @@
+{
+	"commitUrlFormat": "https://fox.25sprout.com/HonestyInsuranceBrokers/HIB_website/web/-/commit/{{hash}}",
+	"compareUrlFormat": "https://fox.25sprout.com/HonestyInsuranceBrokers/HIB_website/web/-/compare/{{previousTag}}...{{currentTag}}",
+	"issueUrlFormat": "https://fox.25sprout.com/HonestyInsuranceBrokers/HIB_website/PM_HIB_website/-/issues/{{id}}"
+}

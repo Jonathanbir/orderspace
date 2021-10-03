@@ -1,0 +1,148 @@
+.list-card {
+	& .square-box {
+		width: 300px;
+		height: 300px;
+		background-color: #f5f5f5;
+		box-shadow: 0px 3px 20px #333;
+		transform: rotate(-43deg);
+		background: linear-gradient(170deg, rgba(0, 0, 0, 0.7), rgba(255, 255, 255, 1));
+		transition: all 1s ease;
+
+		&:hover {
+			transform: scale(1.3) rotate(0deg);
+			background: url('../../../../src/images/index/stage03.jpg');
+			background-size: 100%;
+			background-position: center;
+			background-repeat: no-repeat;
+		}
+
+		& > img {
+			width: 250px;
+			transform: rotate(43deg);
+			margin-left: 40px;
+		}
+
+		&:hover img:nth-child(1) {
+			display: none;
+		}
+
+		& > img:nth-child(2) {
+			width: 250px;
+			display: none;
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			right: 0;
+			left: 0;
+			margin: auto;
+			transition: all 0.8s ease-in-out;
+		}
+
+		&:hover img:nth-child(2) {
+			display: block;
+			transform: scale(3);
+		}
+	}
+
+	@media screen and (--tablet), screen and (--phone) {
+		margin: 10px 20px;
+	}
+
+	& .card-img {
+		height: 265px;
+		background-color: #eee;
+		background-position: center;
+		background-size: cover;
+		background-repeat: no-repeat;
+	}
+
+	& .content {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		justify-content: space-between;
+		height: 280px;
+		padding: 24px 32px;
+
+		@media screen and (--tablet), screen and (--phone) {
+			height: 190px;
+		}
+
+		& > h2 {
+			/* stylelint-disable-next-line value-no-vendor-prefix */
+			display: -webkit-box;
+
+			/* autoprefixer: off */
+			/* stylelint-disable-next-line property-no-vendor-prefix */
+			-webkit-box-orient: vertical;
+
+			/* autoprefixer: on */
+			-webkit-line-clamp: 2;
+			overflow: hidden;
+			font-size: 24px;
+			font-weight: bold;
+			line-height: 1.33;
+			letter-spacing: 1.5px;
+			margin: 0;
+			margin-top: 12px;
+			color: var(--dark-black);
+		}
+
+		& > p {
+			/* stylelint-disable-next-line value-no-vendor-prefix */
+			display: -webkit-box;
+
+			/* autoprefixer: off */
+			/* stylelint-disable-next-line property-no-vendor-prefix */
+			-webkit-box-orient: vertical;
+
+			/* autoprefixer: on */
+			-webkit-line-clamp: 2;
+			color: var(--gray);
+			overflow: hidden;
+			margin-bottom: 6px;
+			min-height: 48px;
+
+			@media screen and (--tablet), screen and (--phone) {
+				display: none;
+			}
+		}
+
+		& > .bottom-section {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			width: 100%;
+
+			& > span {
+				font-family: 'Noto Sans TC', sans-serif;
+				font-size: 14px;
+				font-weight: normal;
+				font-stretch: normal;
+				font-style: normal;
+				line-height: 1.57;
+				letter-spacing: normal;
+				color: var(--gray-phase-1);
+			}
+
+			& .more-button > div {
+				font-size: 14px;
+				color: var(--primary);
+			}
+		}
+	}
+
+	@media screen and (--tablet), screen and (--phone) {
+		& .card-img {
+			height: 220px;
+		}
+
+		& .content {
+			padding: 24px 24px 15px 24px;
+
+			& > p {
+				display: none;
+			}
+		}
+	}
+}

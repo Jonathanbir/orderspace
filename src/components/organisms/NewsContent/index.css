@@ -1,0 +1,294 @@
+& .news {
+	position: relative;
+	width: 100%;
+	background: #000;
+
+	@media screen and (--tablet) {
+		& > div > div {
+			overflow: initial;
+			left: 20vw;
+		}
+	}
+
+	@media screen and (--phone) {
+		& > div > div {
+			overflow: initial;
+		}
+	}
+
+	& .control-button {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		width: 64px;
+		height: 64px;
+		border: solid 2px #cbd8aa;
+		border-radius: 100%;
+		background-color: #000;
+		cursor: pointer;
+		transition: border 0.3s;
+		position: absolute;
+		z-index: 1;
+		top: 240px;
+		outline: none;
+		padding: 0;
+		margin: 0;
+		box-shadow: none;
+
+		@media screen and (max-width: 1312px), screen and (--tablet), screen and (--phone) {
+			width: 50px;
+			height: 50px;
+		}
+
+		@media screen and (--phone) {
+			width: 64px;
+			height: 64px;
+			top: auto;
+			bottom: -95px;
+		}
+
+		& svg {
+			min-width: 16px;
+			min-height: 16px;
+
+			& > path {
+				transition: fill 0.3s;
+			}
+		}
+
+		&:hover {
+			border: solid 2px var(--primary);
+
+			& svg > path {
+				fill: var(--primary);
+			}
+
+			@media screen and (--phone) {
+				border: solid 2px #cbd8aa;
+			}
+		}
+
+		&.prev {
+			top: 45%;
+			left: 1%;
+
+			@media screen and (max-width: 1312px), screen and (--tablet), screen and (--phone) {
+				left: -50px;
+			}
+
+			@media screen and (--phone) {
+				left: 16px;
+			}
+		}
+
+		&.next {
+			top: 45%;
+			right: 1%;
+
+			@media screen and (max-width: 1312px), screen and (--tablet), screen and (--phone) {
+				right: -50px;
+			}
+
+			@media screen and (--phone) {
+				right: 16px;
+			}
+		}
+	}
+
+	& .news-planet {
+		width: 100%;
+		height: 132px;
+		transition: all 0.3s ease-in-out;
+		cursor: pointer;
+
+		& .news-img {
+			position: relative;
+			& h3 {
+				position: absolute;
+				top: 40px;
+				left: 35px;
+				margin: auto;
+				font-size: 40px;
+				padding: 5px;
+				color: #fff;
+				text-shadow: 0px 0px 0px #666, 0px 0px 0px #555, 0px 0px 23px #555, 0px 0px 25px #666,
+					0px 0px 30px #999, 0px 0px 20px #000;
+			}
+		}
+	}
+
+	& .news-item {
+		position: absolute;
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		align-items: center;
+		width: 500px;
+		height: 500px;
+		right: 20vw;
+		top: 20vw;
+		transition: all 0.3s ease-in-out;
+		background-repeat: no-repeat;
+		animation: float 1.8s linear 1s infinite alternate;
+		background: url('../../../../src/images/news/moon.png');
+		background-size: cover;
+		background-position: center;
+		background-repeat: no-repeat;
+
+		@media screen and (--tablet), screen and (--phone) {
+			position: initial;
+		}
+
+		@media screen and (--phone) {
+			width: 100%;
+		}
+
+		& .news-information {
+			position: relative;
+			width: 100%;
+			height: 500px;
+			transition: all 0.5s ease-in-out;
+			background-repeat: no-repeat;
+			animation: float 1.8s linear 1s infinite alternate;
+
+			& h3 {
+				position: absolute;
+				top: 100px;
+				left: 8vw;
+				text-align: center;
+				text-shadow: 0px 0px 0px #666, 0px 0px 0px #555, 0px 0px 23px #555, 0px 0px 25px #666,
+					0px 0px 30px #999, 0px 0px 20px #000;
+				font-size: 30px;
+				line-height: 50px;
+				letter-spacing: 2px;
+				font-weight: bold;
+				color: #fff;
+				transition: 0.5s;
+				cursor: pointer;
+			}
+
+			& p {
+				position: absolute;
+				top: 188px;
+				left: 90px;
+				width: 250px;
+				padding: 20px;
+				background-color: #000;
+				border-radius: 5px;
+				box-shadow: 0px 3px 20px #333;
+				color: #f5f5f5;
+			}
+
+			& .more-btn {
+				position: absolute;
+				top: 400px;
+				left: 30%;
+				padding: 10px 30px;
+				background-color: #000;
+				color: #fff;
+				box-shadow: 0px 3px 20px #fff;
+				border-radius: 10px;
+				cursor: pointer;
+				transition: all 0.5s ease-in-out;
+			}
+
+			& .news-ball {
+				position: absolute;
+				top: -50px;
+				right: 420px;
+				width: 150px;
+				height: 150px;
+				animation-name: ball04;
+				animation-duration: 10s;
+				animation-iteration-count: infinite;
+				border-radius: 75px;
+				transition: all 1.2s ease-in-out;
+			}
+		}
+
+		& .news-information:hover h3 {
+			transform: scale(1.2);
+			top: 50px;
+			left: 10vw;
+			text-shadow: 0px 1px 0px #eee, 0px 1px 0px #ddd, 0px 2px 0px #ccc, 0px 2px 0px #aaa,
+				0px 3px 0px #999, 0px 3px 0px #888, 0px 4px 0px #777, 0px 4px 0px #666, 0px 5px 0px #555,
+				0px 5px 16px #555;
+			color: #000;
+			background-color: #fff;
+		}
+
+		& .news-information:hover p {
+			top: 170px;
+			box-shadow: 0px 3px 20px #fff;
+			transform: scale(1.2);
+		}
+
+		& .news-information .more-btn:hover {
+			background-color: #fff;
+			color: #000;
+			box-shadow: 0px 3px 20px #000;
+			transform: scale(1.2);
+		}
+
+		& .news-information:hover .news-ball {
+			transform: rotate(359deg);
+		}
+	}
+
+	& .news-item06 {
+		width: 1100px;
+		right: 0;
+	}
+
+	& .news-planet:hover {
+		filter: contrast(200%);
+	}
+
+	& .news-planet:nth-of-type(1) {
+		width: 780px;
+		height: 137px;
+	}
+
+	& .news-planet:nth-of-type(2) {
+		width: 780px;
+	}
+
+	& .news-planet:nth-of-type(3) {
+		width: 750px;
+		height: 148px;
+	}
+
+	& .news-planet:nth-of-type(4) {
+		width: 700px;
+		height: 148px;
+	}
+
+	& .news-planet:nth-of-type(5) {
+		width: 710px;
+		height: 148px;
+	}
+
+	& .news-planet:nth-of-type(6) {
+		width: 730px;
+		height: 148px;
+	}
+
+	& .news-planet:nth-of-type(7) {
+		width: 720px;
+		height: 148px;
+	}
+
+	& .news-planet:nth-of-type(8) {
+		width: 720px;
+		height: 148px;
+	}
+}
+
+@keyframes float {
+	0% {
+		top: 19vw;
+	}
+	100% {
+		top: 21vw;
+	}
+}

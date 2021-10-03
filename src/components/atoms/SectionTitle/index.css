@@ -1,0 +1,58 @@
+.section-title {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+
+	@media screen and (--phone) {
+		align-items: flex-start;
+	}
+
+	& > h1 {
+		font-family: 'Noto Sans TC', sans-serif;
+		font-size: 32px;
+		font-weight: bold;
+		font-stretch: normal;
+		font-style: normal;
+		line-height: 1.25;
+		letter-spacing: normal;
+		color: var(--black);
+		margin-bottom: 12px;
+	}
+
+	& > .hl {
+		width: 32px;
+		height: 4px;
+		border-radius: 2px;
+		background-color: var(--primary);
+
+		@media screen and (--phone) {
+			& {
+				width: 16px;
+			}
+		}
+	}
+
+	&.white {
+		& > h1 {
+			color: var(--white);
+		}
+
+		& > .hl {
+			background-color: var(--white);
+		}
+	}
+}
+
+.ves-share {
+	align-items: flex-start;
+
+	/* stylelint-disable-next-line no-descending-specificity */
+	& > h1 {
+		@media screen and (--phone) {
+			& {
+				font-size: 24px;
+			}
+		}
+	}
+}

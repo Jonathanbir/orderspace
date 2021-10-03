@@ -1,0 +1,313 @@
+/* stylelint-disable no-descending-specificity */
+
+.shop-content {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+
+	& .up-btn {
+		width: 200px;
+		height: 200px;
+		position: fixed;
+		right: 0;
+		bottom: 0;
+		z-index: 99;
+		background: url('../../../../src/images/gototop.png');
+		background-size: cover;
+		background-position: center;
+		background-repeat: no-repeat;
+		cursor: pointer;
+		transform: scale(0.5);
+		transition: all 0.5s;
+
+		@media screen and (--phone), screen and (--tablet) {
+			display: none;
+		}
+	}
+
+	& .up-btn:hover {
+		transform: rotate(-45deg) scale(0.8);
+	}
+
+	& .shop-container {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		width: 100%;
+
+		& .banner {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			width: 100%;
+			height: 600px;
+			background: url('../../../../src/images/background/bgc-common.jpg');
+			background-size: 100%;
+			background-position: center;
+			background-repeat: no-repeat;
+
+			@media screen and (--tablet) {
+				height: 80vw;
+				background-size: 200%;
+				background-position: center -70px;
+			}
+
+			@media screen and (--phone) {
+				height: 60vw;
+				background-size: 200%;
+				background-position: center -70px;
+			}
+
+			& h1 {
+				position: relative;
+				top: -50px;
+				font-size: 70px;
+				font-weight: 900;
+				color: #fff;
+
+				@media screen and (--tablet) {
+					top: 2vw;
+					font-size: 60px;
+				}
+
+				@media screen and (--phone) {
+					top: 4vw;
+					font-size: 30px;
+				}
+			}
+		}
+
+		& .shop-tab {
+			width: 100%;
+			background: #000;
+		}
+	}
+
+	& .back-button {
+		display: flex;
+		align-items: center;
+		align-self: flex-start;
+		font-family: 'Noto Sans TC', sans-serif;
+		font-size: 14px;
+		font-weight: normal;
+		font-stretch: normal;
+		font-style: normal;
+		line-height: 1.57;
+		letter-spacing: normal;
+		color: var(--gray-phase-1);
+		margin-bottom: 16px;
+		height: 22px;
+
+		& svg {
+			margin-right: 5px;
+		}
+	}
+
+	& h2 {
+		font-family: 'Noto Sans TC', sans-serif;
+		font-size: 50px;
+		font-weight: bold;
+		font-stretch: normal;
+		font-style: normal;
+		text-align: center;
+		line-height: 1.25;
+		letter-spacing: 2px;
+		color: #fff;
+		margin-bottom: 24px;
+
+		@media screen and (--tablet), screen and (--phone) {
+			font-size: 35px;
+		}
+	}
+
+	& .sub-title {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+
+		& h4 {
+			margin-right: 10px;
+			color: #2c2c2c;
+			padding: 4px 16px;
+			border-top-right-radius: 10px;
+			border: solid 2px var(--primary);
+			background-color: #fff;
+
+			@media screen and (--phone) {
+				font-size: 14px;
+			}
+		}
+
+		& p {
+			color: #808080;
+			margin-left: 16px;
+
+			@media screen and (--phone) {
+				font-size: 14px;
+			}
+		}
+	}
+
+	& .forward-section {
+		display: flex;
+		position: fixed;
+		top: 270px;
+		right: 50%;
+		left: 50%;
+		transform: translateX(calc(560px + 24px));
+		flex-direction: column;
+		padding: 10px 12px;
+		border-radius: 8px;
+		box-shadow: 0 2px 16px 0 rgba(44, 44, 44, 0.16);
+		background-color: #fff;
+		z-index: 1;
+		width: 48px;
+
+		@media screen and (--tablet), screen and (--phone) {
+			width: 176px;
+			padding: 12px 8px;
+			flex-direction: row;
+			align-items: center;
+			justify-content: center;
+			position: fixed;
+			top: initial;
+			bottom: 24px;
+			left: 50%;
+			right: 50%;
+			transform: translateX(-50%);
+		}
+
+		& .link {
+			width: 22px;
+			margin: 5px auto;
+			cursor: pointer;
+
+			@media screen and (--tablet), screen and (--phone) {
+				margin: auto 8px;
+			}
+		}
+
+		& .copy-note {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			position: absolute;
+			top: 7.5px;
+			right: 50px;
+			padding: 10px 12px;
+			border-radius: 8px;
+			box-shadow: 0 2px 16px 0 rgb(44 44 44 / 16%);
+			background-color: #fff;
+			white-space: nowrap;
+
+			@media screen and (--tablet), screen and (--phone) {
+				left: 7.5px;
+				top: -50px;
+			}
+		}
+	}
+
+	& .inner-html {
+		padding: 16px 0 40px;
+		border-bottom: 1px solid var(--gray-phase-1);
+		margin-bottom: 20px;
+
+		& p {
+			font-family: 'Noto Sans TC', sans-serif;
+			font-size: 16px;
+			font-weight: normal;
+			font-stretch: normal;
+			font-style: normal;
+			line-height: 2;
+			letter-spacing: normal;
+			color: var(--dark-black);
+		}
+
+		& img {
+			display: block;
+			width: 100%;
+			height: auto;
+
+			&:not(:first-child) {
+				margin-top: 24px;
+			}
+		}
+
+		&.small p {
+			font-size: 16px;
+		}
+
+		&.medium p {
+			font-size: 20px;
+		}
+
+		&.large p {
+			font-size: 24px;
+		}
+	}
+
+	& .select-content {
+		display: flex;
+		position: relative;
+		flex-direction: row;
+		justify-content: space-between;
+		width: 100%;
+
+		& .prev-btn {
+			background-color: #fff;
+			color: var(--primary);
+			border: 1px solid var(--primary);
+			border-radius: 8px;
+
+			& svg {
+				margin-right: 5px;
+			}
+		}
+
+		& .next-btn {
+			background-color: #fff;
+			color: var(--primary);
+			border: 1px solid var(--primary);
+			border-radius: 8px;
+
+			& svg {
+				margin-left: 5px;
+			}
+		}
+
+		& .upbtn {
+			position: absolute;
+			right: -95px;
+			bottom: 0;
+			width: 48px;
+			height: 48px;
+			padding: 16px;
+			border: solid 1.2px var(--primary);
+			border-radius: 100%;
+			border-style: solid;
+			border-width: 1px;
+			font-size: 16px;
+			color: var(--primary);
+			background-color: #fff;
+			cursor: pointer;
+			transition: 0.3s;
+
+			& > div {
+				padding: 0;
+			}
+
+			& svg {
+				transform: rotate(90deg);
+			}
+
+			@media screen and (--tablet), screen and (--phone) {
+				position: fixed;
+				right: 20px;
+				bottom: 24px;
+				z-index: 1;
+			}
+		}
+	}
+}

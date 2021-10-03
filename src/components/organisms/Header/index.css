@@ -1,0 +1,104 @@
+.header {
+	display: flex;
+	width: 100%;
+
+	/* stylelint-disable-next-line property-no-vendor-prefix */
+	-webkit-backdrop-filter: blur(4px);
+	backdrop-filter: blur(4px);
+	padding: 0 80px;
+	align-items: center;
+	justify-content: space-between;
+	z-index: 100;
+	position: fixed;
+	top: 0;
+	background-color: rgba(44, 44, 44, 0.4);
+	box-shadow: 0 0 8px 0 rgba(44, 44, 44, 0.4);
+	transition: background-color 0.3s;
+
+	@media screen and (--tablet), screen and (--phone) {
+		background-color: white;
+	}
+
+	&.scroll {
+		background-color: #000;
+	}
+
+	& .logo-img {
+		position: relative;
+		width: 202px;
+		height: 40px;
+		background-image: url('../../../images/icon/logo-web.inline.svg');
+		background-repeat: no-repeat;
+		background-size: contain;
+		background-position: center;
+		cursor: pointer;
+
+		& > .back-home-btn {
+			font-size: 0;
+			position: absolute;
+			width: 100%;
+			height: 100%;
+		}
+	}
+
+	& > .join-btn {
+		text-align: right;
+		width: 202px;
+
+		& > .button {
+			border-radius: 8px;
+
+			& > div {
+				padding: 0 16px;
+			}
+		}
+	}
+
+	& > .hamburger {
+		display: none;
+		width: 24px;
+		height: 24px;
+		border: none;
+	}
+
+	@media screen and (--tablet), screen and (--phone) {
+		display: flex;
+		padding: 0 20px;
+		height: 64px;
+		grid-auto-flow: unset;
+		justify-content: space-between;
+		transition: 0.3s ease-in-out;
+
+		& > .logo-img {
+			position: absolute;
+			top: 16px;
+			left: 20px;
+			width: 161px;
+			height: 32px;
+		}
+
+		& > .join-btn {
+			display: none;
+			margin: 64px 0;
+		}
+
+		& > .hamburger {
+			display: block;
+			position: absolute;
+			top: 20px;
+			right: 20px;
+		}
+
+		&.active {
+			flex-direction: column;
+			height: 100vh;
+			overflow-y: auto;
+			background-color: white;
+
+			& > .join-btn {
+				display: block;
+				text-align: center;
+			}
+		}
+	}
+}

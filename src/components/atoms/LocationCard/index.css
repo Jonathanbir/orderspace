@@ -1,0 +1,153 @@
+.location-card {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	position: relative;
+	margin: 0 32px;
+	margin-top: 24px;
+	border-bottom: 2px solid #d2d2d2;
+
+	@media screen and (--tablet), screen and (--phone) {
+		margin: 24px 20px;
+	}
+
+	& > h2 {
+		font-size: 24px;
+		font-weight: bold;
+		line-height: 1.33;
+		letter-spacing: 1px;
+		margin: 0;
+		color: var(--dark-black);
+		font-stretch: normal;
+		font-style: normal;
+	}
+
+	& > p {
+		color: var(--dark-black);
+		font-family: 'Noto Sans TC', sans-serif;
+		font-size: 16px;
+		font-weight: normal;
+		font-stretch: normal;
+		font-style: normal;
+		line-height: 1.5;
+		letter-spacing: normal;
+		margin: 16px auto;
+	}
+
+	& .link {
+		color: var(--dark-black);
+	}
+
+	& .card-Item {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		margin: 12px 0;
+
+		& .img {
+			width: 192px;
+			height: 120px;
+			margin-right: 8px;
+			background-repeat: no-repeat;
+			background-size: cover;
+			background-position: center;
+
+			@media screen and (--tablet), screen and (--phone) {
+				width: 100%;
+			}
+		}
+
+		& > p {
+			margin-left: 8px;
+			font-size: 14px;
+			font-weight: normal;
+			font-stretch: normal;
+			font-style: normal;
+			line-height: 1.57;
+			letter-spacing: normal;
+		}
+
+		& > .arrow {
+			cursor: pointer;
+		}
+
+		&.active {
+			& > .arrow {
+				transform: rotate(180deg);
+				transition-duration: 0.5s;
+			}
+		}
+	}
+
+	& .line {
+		margin-right: 16px;
+		width: 1px;
+		height: 8px;
+		background: #a8a8a8;
+
+		@media screen and (--phone) {
+			margin-right: 12px;
+		}
+	}
+
+	& .content {
+		width: 100%;
+		box-sizing: border-box;
+		font-size: 16px;
+		font-weight: normal;
+		font-stretch: normal;
+		font-style: normal;
+		line-height: 1.75;
+		letter-spacing: 1px;
+		color: var(--gray);
+		max-height: 0;
+		overflow: hidden;
+
+		@media screen and (--phone) {
+			flex-direction: column;
+
+			& .img {
+				width: 100%;
+				height: 196px;
+				margin-bottom: 16px;
+			}
+		}
+
+		&.active {
+			width: 100%;
+			max-height: fit-content;
+		}
+	}
+
+	& .contact-content {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+
+		@media screen and (--phone) {
+			flex-wrap: wrap;
+		}
+
+		& .card-Items {
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+			height: 30px;
+			margin-right: 16px;
+
+			@media screen and (--phone) {
+				margin-right: 12px;
+			}
+
+			& > p {
+				margin-left: 8px;
+				font-size: 14px;
+				font-weight: normal;
+				font-stretch: normal;
+				font-style: normal;
+				line-height: 1.57;
+				letter-spacing: normal;
+			}
+		}
+	}
+}

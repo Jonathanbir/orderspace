@@ -1,0 +1,139 @@
+.list-card {
+	background-color: white;
+	border-radius: 0 80px 0 0;
+	box-shadow: 0 2px 16px 0 rgba(44, 44, 44, 0.12);
+
+	& .card-img {
+		height: 265px;
+		background-color: #eee;
+		background-size: cover;
+		background-position: center;
+		background-repeat: no-repeat;
+	}
+
+	& .content {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		height: 280px;
+		padding: 24px 32px;
+
+		@media screen and (--tablet), screen and (--phone) {
+			height: initial;
+		}
+
+		& .card-title {
+			& > h2 {
+				/* stylelint-disable-next-line value-no-vendor-prefix */
+				display: -webkit-box;
+
+				/* autoprefixer: off */
+				/* stylelint-disable-next-line property-no-vendor-prefix */
+				-webkit-box-orient: vertical;
+
+				/* autoprefixer: on */
+				-webkit-line-clamp: 2;
+				overflow: hidden;
+				font-size: 24px;
+				font-weight: bold;
+				line-height: 1.33;
+				letter-spacing: 1.5px;
+				margin: 0;
+				margin-top: 12px;
+				color: var(--dark-black);
+
+				@media screen and (--tablet), screen and (--phone) {
+					position: absolute;
+					bottom: 76px;
+					color: #fff;
+				}
+			}
+
+			& > p {
+				/* stylelint-disable-next-line value-no-vendor-prefix */
+				display: -webkit-box;
+
+				/* autoprefixer: off */
+				/* stylelint-disable-next-line property-no-vendor-prefix */
+				-webkit-box-orient: vertical;
+
+				/* autoprefixer: on */
+				-webkit-line-clamp: 2;
+				overflow: hidden;
+				color: var(--gray);
+				margin: 9px 0 12px 0;
+				line-height: 1.5;
+
+				@media screen and (--tablet), screen and (--phone) {
+					display: none;
+				}
+			}
+		}
+
+		& > .cardLink {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			margin-right: -12px;
+
+			& > span {
+				font-family: 'Noto Sans TC', sans-serif;
+				font-size: 14px;
+				font-weight: normal;
+				font-stretch: normal;
+				font-style: normal;
+				line-height: 1.57;
+				letter-spacing: normal;
+				color: var(--gray-phase-1);
+			}
+
+			& .more-button > div {
+				font-size: 14px;
+				color: var(--primary);
+			}
+		}
+	}
+
+	@media screen and (--tablet), screen and (--phone) {
+		position: relative;
+
+		& .card-img {
+			height: 220px;
+			position: relative;
+
+			&::before {
+				content: '';
+				background-color: rgba(44, 44, 44, 0.24);
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+			}
+		}
+
+		& .content {
+			padding: 8px 16px;
+
+			& .tag {
+				color: white;
+				background-color: var(--primary);
+				opacity: 0.64;
+				position: absolute;
+				top: 16px;
+				left: 16px;
+			}
+
+			& > h2 {
+				color: white;
+				position: absolute;
+				width: calc(100% - 32px);
+				bottom: calc(53.33px + 16px);
+			}
+
+			& > p {
+				display: none;
+			}
+		}
+	}
+}

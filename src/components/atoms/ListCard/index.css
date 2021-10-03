@@ -1,0 +1,122 @@
+.list-card {
+	display: grid;
+	width: 90%;
+	height: 286px;
+	margin: auto;
+	background-color: white;
+	border-radius: 0 64px 0 0;
+	box-shadow: 0 2px 16px 0 rgba(44, 44, 44, 0.16);
+	padding: 24px 40px;
+	grid-template-columns: 1fr 12fr;
+	grid-column-gap: 32px;
+
+	& > .date {
+		display: flex;
+		flex-wrap: wrap;
+		align-content: space-between;
+
+		& > .year {
+			font-family: Montserrat, sans-serif;
+			font-size: 24px;
+			font-weight: 600;
+			font-stretch: normal;
+			font-style: normal;
+			line-height: 1.33;
+			letter-spacing: normal;
+			color: var(--primary);
+		}
+
+		& > .mon {
+			color: var(--gray);
+
+			& > span {
+				font-family: Montserrat, sans-serif;
+				text-transform: uppercase;
+				font-stretch: normal;
+				font-style: normal;
+				letter-spacing: normal;
+
+				&:first-child {
+					font-size: 16px;
+					font-weight: 500;
+					line-height: 1.5;
+				}
+
+				&:last-child {
+					font-size: 24px;
+					font-weight: 600;
+					line-height: 1.33;
+				}
+			}
+		}
+	}
+
+	& > .content {
+		display: flex;
+
+		& > .card-img {
+			min-width: 313px;
+			height: 100%;
+			background-color: var(--gray-phase-2);
+			margin-right: 32px;
+			background-size: cover;
+			background-position: center;
+			background-repeat: no-repeat;
+		}
+
+		& > .card-content {
+			position: relative;
+			width: 70%;
+
+			& > h2 {
+				/* stylelint-disable-next-line value-no-vendor-prefix */
+				display: -webkit-box;
+
+				/* autoprefixer: off */
+				/* stylelint-disable-next-line property-no-vendor-prefix */
+				-webkit-box-orient: vertical;
+
+				/* autoprefixer: on */
+				-webkit-line-clamp: 2;
+				font-size: 32px;
+				font-weight: bold;
+				line-height: 1.33;
+				letter-spacing: 1.5px;
+				margin: 0;
+				margin-top: 16px;
+				overflow: hidden;
+				color: var(--dark-black);
+			}
+
+			& > p {
+				/* stylelint-disable-next-line value-no-vendor-prefix */
+				display: -webkit-box;
+
+				/* autoprefixer: off */
+				/* stylelint-disable-next-line property-no-vendor-prefix */
+				-webkit-box-orient: vertical;
+
+				/* autoprefixer: on */
+				-webkit-line-clamp: 2;
+				font-size: 16px;
+				line-height: 1.5;
+				letter-spacing: normal;
+				color: var(--gray);
+				overflow: hidden;
+				margin-top: 16px;
+			}
+
+			& .more-button {
+				position: absolute;
+				bottom: -13px;
+				right: 0;
+				text-align: right;
+
+				& > div {
+					font-size: 14px;
+					color: var(--primary);
+				}
+			}
+		}
+	}
+}

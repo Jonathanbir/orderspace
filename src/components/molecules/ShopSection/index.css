@@ -1,0 +1,54 @@
+.shop-wrapper {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	align-self: center;
+	width: 100%;
+	height: 835px;
+	margin: 100px auto;
+	background: linear-gradient(0deg, hsla(0, 50%, 0%, 0.5), hsla(0, 50%, 0%, 0.5)),
+		url('../../../../src/images/index/03.jpg');
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	-webkit-clip-path: polygon(-151% 35%, 100% 0%, 120% 105%);
+
+	@media screen and (--tablet), screen and (--phone) {
+		width: 100%;
+		padding: 0 20px 0 0;
+		margin-bottom: 86px;
+	}
+
+	& .shop-container {
+		display: flex;
+		flex-direction: column;
+		position: relative;
+		width: 100%;
+		margin: auto;
+
+		@media screen and (--phone) {
+			position: relative;
+			left: 1%;
+		}
+
+		& .title {
+			margin-bottom: 32px;
+
+			@media screen and (--tablet), screen and (--phone) {
+				margin-bottom: 46px;
+				margin-left: 20px;
+			}
+		}
+
+		& .shop {
+			display: flex;
+			position: relative;
+			justify-content: center;
+
+			@media screen and (--tablet), screen and (--phone) {
+				flex-direction: column;
+			}
+		}
+	}
+}

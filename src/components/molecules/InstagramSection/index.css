@@ -1,0 +1,166 @@
+.instagram-content {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+	z-index: 1;
+	width: 100%;
+	height: 835px;
+	margin: 100px auto;
+	background: url('../../../../src/images/index/bgc06.jpeg');
+	background-position: center;
+	background-repeat: repeat;
+	background-attachment: fixed;
+
+	& .instagram-black {
+		position: absolute;
+		left: 400px;
+		z-index: -1;
+		width: 1200px;
+		height: 500px;
+		background: #191919;
+	}
+
+	& .instagram-container {
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		align-items: center;
+		width: 50%;
+
+		@media screen and (--tablet), screen and (--phone) {
+			width: 100%;
+			flex-direction: column;
+		}
+
+		& > h2 {
+			position: relative;
+			left: -20px;
+			width: 100%;
+			font-size: 50px;
+			font-weight: 900;
+			line-height: 40px;
+			text-align: center;
+			padding: 50px 80px;
+			color: #fff;
+			background-color: #000;
+			box-shadow: 3px 2px 30px #fff;
+
+			@media screen and (--tablet), screen and (--phone) {
+				position: initial;
+			}
+		}
+
+		& .instagram {
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+			width: 100%;
+
+			& .instagram-row {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				flex: 3;
+				width: 250px;
+			}
+
+			& .instagram-pic01 {
+				width: 100%;
+				height: 400px;
+				margin: auto;
+				background: url('../../../../src/images/index/instagram/purege06.jpg');
+				background-size: cover;
+				background-position: center;
+				background-repeat: no-repeat;
+			}
+
+			& .instagram-pic02 {
+				width: 100%;
+				height: 300px;
+				margin: auto;
+				background: url('../../../../src/images/index/instagram/purege07.jpg');
+				background-size: cover;
+				background-position: center;
+				background-repeat: no-repeat;
+			}
+
+			& .instagram-pic03 {
+				width: 100%;
+				height: 300px;
+				margin: auto;
+				background: url('../../../../src/images/index/instagram/lovely01.jpg');
+				background-size: cover;
+				background-position: center;
+				background-repeat: no-repeat;
+			}
+
+			& .instagram-pic04 {
+				width: 100%;
+				height: 300px;
+				margin: auto;
+				background: url('../../../../src/images/index/instagram/instagram22.jpg');
+				background-size: cover;
+				background-position: center;
+				background-repeat: no-repeat;
+			}
+
+			& .instagram-pic05 {
+				width: 100%;
+				height: 300px;
+				margin: auto;
+				background: url('../../../../src/images/index/instagram/instagram03.jpg');
+				background-size: cover;
+				background-position: center;
+				background-repeat: no-repeat;
+			}
+
+			& .instagram-pic06 {
+				width: 100%;
+				height: 400px;
+				margin: auto;
+				background: url('../../../../src/images/index/instagram/instagram28.jpg');
+				background-size: cover;
+				background-position: center;
+				background-repeat: no-repeat;
+			}
+
+			& .instagram-pic07 {
+				width: 100%;
+				height: 450px;
+				margin: auto;
+				background: url('../../../../src/images/index/instagram/photos08.jpeg');
+				background-size: cover;
+				background-position: center;
+				background-repeat: no-repeat;
+			}
+
+			& .instagram-pic08 {
+				width: 100%;
+				height: 150px;
+				margin: auto;
+				background: url('../../../../src/images/index/instagram/photos06.jpeg');
+				background-size: cover;
+				background-position: center;
+				background-repeat: no-repeat;
+			}
+
+			& .instagram-pic09 {
+				width: 100%;
+				height: 400px;
+				margin: auto;
+				background: url('../../../../src/images/index/instagram/photos23.jpeg');
+				background-size: cover;
+				background-position: center;
+				background-repeat: no-repeat;
+			}
+		}
+	}
+
+	@media screen and (--tablet), screen and (--phone) {
+		position: initial;
+		top: initial;
+		justify-content: center;
+	}
+}

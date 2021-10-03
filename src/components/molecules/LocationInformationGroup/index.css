@@ -1,0 +1,17 @@
+.wrapper {
+	display: flex;
+	flex-direction: column;
+	position: relative;
+	height: 720px;
+	overflow: hidden;
+	overflow-y: scroll;
+	background-color: #fff;
+
+	@media screen and (--tablet), screen and (--phone) {
+		display: block;
+
+		& > div > div {
+			overflow: initial;
+		}
+	}
+}

@@ -1,0 +1,21 @@
+.dropdown-basic {
+	position: relative;
+
+	& > .content {
+		cursor: pointer;
+
+		&.disabled {
+			cursor: not-allowed;
+		}
+	}
+
+	& > .menu {
+		position: absolute;
+		left: 0;
+		top: 100%;
+		width: 100%;
+		z-index: 5;
+		outline: none;
+		margin-top: 8px;
+	}
+}

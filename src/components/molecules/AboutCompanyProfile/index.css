@@ -1,0 +1,308 @@
+.company-profile {
+	margin-top: 80px;
+	margin-bottom: 40px;
+
+	& > .card-group {
+		margin: auto;
+		margin-bottom: 40px;
+		width: min-content;
+		max-width: 1120px;
+		position: relative;
+
+		@media screen and (--tablet) {
+			width: 90vw;
+		}
+
+		@media screen and (--phone) {
+			width: auto;
+			margin: 0 35px;
+		}
+
+		& > .card-group-background {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			margin: auto;
+			position: absolute;
+			left: 0;
+			right: 0;
+			top: 0;
+			bottom: 0;
+			z-index: -1;
+			padding: 86px 80px;
+			width: 400px;
+			height: 400px;
+			box-shadow: 0 0 8px 24px rgba(203, 216, 170, 0.08);
+			border: solid 1px var(--light-primary);
+			border-radius: 400px;
+
+			@media screen and (--tablet), screen and (--phone) {
+				position: static;
+				border: none;
+				box-shadow: none;
+				width: auto;
+				height: auto;
+				padding: 0;
+			}
+
+			& > .logo {
+				width: 160px;
+				height: 164px;
+				margin: auto;
+
+				@media screen and (--tablet), screen and (--phone) {
+					display: none;
+				}
+			}
+
+			& > h3 {
+				margin-top: 16px;
+				width: 240px;
+				font-size: 16px;
+				font-weight: 500;
+				font-stretch: normal;
+				font-style: normal;
+				line-height: 1.5;
+				letter-spacing: normal;
+				text-align: center;
+				color: var(--dark-black);
+
+				@media screen and (--tablet), screen and (--phone) {
+					width: auto;
+					margin: 40px auto;
+				}
+			}
+		}
+
+		& > .cards {
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			grid-column-gap: 320px;
+			grid-row-gap: 104px;
+			justify-content: space-between;
+
+			@media screen and (--tablet), screen and (--phone) {
+				display: none;
+			}
+		}
+
+		& > .cards-mobile {
+			display: none;
+
+			@media screen and (--tablet), screen and (--phone) {
+				display: block;
+			}
+
+			& .controlButton {
+				background: none;
+				border: none;
+				position: absolute;
+				bottom: -104px;
+				padding: 0;
+
+				&.next {
+					right: -16px;
+				}
+
+				&.prev {
+					left: -16px;
+				}
+			}
+		}
+
+		& .card {
+			width: 304px;
+			height: 290px;
+			padding: 32px;
+			text-align: center;
+			border: solid 1px var(--primary);
+			background-color: white;
+
+			& > h3 {
+				font-size: 24px;
+				font-weight: bold;
+				font-stretch: normal;
+				font-style: normal;
+				line-height: 1.33;
+				letter-spacing: 1px;
+				color: var(--primary);
+			}
+
+			& > svg {
+				margin: 24px 0;
+			}
+
+			& > div {
+				font-size: 14px;
+				font-weight: normal;
+				font-stretch: normal;
+				font-style: normal;
+				line-height: 1.57;
+				letter-spacing: normal;
+				color: var(--dark-black);
+			}
+
+			@media screen and (--desktop) {
+				&:nth-child(1) {
+					border-radius: 80px 0 0 0;
+				}
+
+				&:nth-child(2) {
+					border-radius: 0 80px 0 0;
+				}
+
+				&:nth-child(3) {
+					border-radius: 0 0 0 80px;
+				}
+
+				&:nth-child(4) {
+					border-radius: 0 0 80px 0;
+				}
+			}
+
+			@media screen and (--tablet), screen and (--phone) {
+				border-radius: 0 80px 0 0;
+			}
+		}
+	}
+
+	& > .message {
+		display: flex;
+		justify-content: center;
+		padding-top: 80px;
+		padding-bottom: 77px;
+		background-color: #fbfcf8;
+
+		@media screen and (--tablet), screen and (--phone) {
+			margin-top: 184px;
+			margin-bottom: 64px;
+			padding-top: 40px;
+			padding-bottom: 64px;
+		}
+
+		& .message-container {
+			display: flex;
+			justify-content: space-between;
+			align-items: flex-end;
+			max-width: 928px;
+			width: 100%;
+
+			@media screen and (--tablet), screen and (--phone) {
+				max-width: none;
+				flex-direction: column;
+				align-items: center;
+			}
+
+			& > .content {
+				width: 560px;
+
+				@media screen and (--tablet), screen and (--phone) {
+					width: calc(100vw - 40px);
+				}
+
+				& > h2 {
+					& > span {
+						font-size: 32px;
+						font-weight: bold;
+						font-stretch: normal;
+						font-style: normal;
+						line-height: 1.25;
+						letter-spacing: normal;
+						color: var(--dark-black);
+						position: relative;
+						z-index: 1;
+
+						@media screen and (--tablet), screen and (--phone) {
+							font-size: 24px;
+							font-weight: bold;
+							font-stretch: normal;
+							font-style: normal;
+							line-height: 1.67;
+							letter-spacing: -0.1px;
+						}
+
+						&::before {
+							content: '';
+							width: 90%;
+							height: 10px;
+							background-color: var(--primary);
+							margin: auto;
+							position: absolute;
+							left: 0;
+							right: 0;
+							bottom: 0;
+							z-index: -1;
+
+							@media screen and (--tablet), screen and (--phone) {
+								height: 8px;
+							}
+						}
+					}
+				}
+
+				& > div {
+					margin-top: 24px;
+					font-size: 16px;
+					font-weight: normal;
+					font-stretch: normal;
+					font-style: normal;
+					line-height: 2;
+					letter-spacing: normal;
+					color: var(--dark-black);
+
+					@media screen and (--tablet), screen and (--phone) {
+						margin-top: 32px;
+					}
+				}
+			}
+
+			& > .name {
+				@media screen and (--tablet), screen and (--phone) {
+					align-self: flex-end;
+					width: 271px;
+					margin-top: 32px;
+				}
+
+				& > h2 {
+					position: relative;
+					z-index: 1;
+					padding-left: 38px;
+					font-size: 32px;
+					font-weight: 900;
+					font-stretch: normal;
+					font-style: normal;
+					line-height: 1.25;
+					letter-spacing: 1px;
+					color: var(--dark-black);
+
+					& > span {
+						margin-right: 16px;
+						font-size: 16px;
+						font-weight: 500;
+						font-stretch: normal;
+						font-style: normal;
+						line-height: 1.5;
+						letter-spacing: normal;
+					}
+
+					&::before {
+						content: '';
+						width: calc((100vw - 928px) / 2 + 201px);
+						height: 40px;
+						background-color: #e1e9ce;
+						margin: auto;
+						position: absolute;
+						left: 0;
+						right: 0;
+						bottom: -25px;
+						z-index: -1;
+
+						@media screen and (--tablet), screen and (--phone) {
+							width: 100%;
+						}
+					}
+				}
+			}
+		}
+	}
+}

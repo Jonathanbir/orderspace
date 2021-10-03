@@ -1,0 +1,31 @@
+.service-background {
+	& > div {
+		position: absolute;
+		z-index: -1;
+
+		&:first-child {
+			top: 244px;
+			left: 0;
+
+			@media screen and (--tablet), screen and (--phone) {
+				top: 344px;
+				left: -130px;
+			}
+		}
+
+		&:last-child {
+			top: 840px;
+			right: -60px;
+
+			@media screen and (--tablet), screen and (--phone) {
+				right: -86px;
+			}
+		}
+
+		@media screen and (--tablet), screen and (--phone) {
+			& > svg {
+				transform: scale(0.705);
+			}
+		}
+	}
+}

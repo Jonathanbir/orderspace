@@ -1,0 +1,29 @@
+.list-item {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+
+	& p {
+		width: 300px;
+		font-size: 20px;
+		padding: 20px;
+		color: #fff;
+		border-bottom: 1px solid #fff;
+	}
+
+	& .delete-btn {
+		color: #000;
+		background-color: #fff;
+		border: 10px;
+		cursor: pointer;
+		padding: 5px 10px;
+		margin: 20px;
+		transition: all 0.5s ease-in-out;
+	}
+
+	& .delete-btn:hover {
+		color: #fff;
+		background-color: #aaa;
+	}
+}

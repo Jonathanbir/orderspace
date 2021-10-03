@@ -1,0 +1,75 @@
+.product-wrapper {
+	width: 100%;
+
+	@media screen and (--tablet), screen and (--phone) {
+		display: block;
+
+		& > div > div {
+			overflow: initial;
+		}
+	}
+
+	& .line-wrapper {
+		position: relative;
+		width: 262px;
+		margin-left: 30px;
+
+		& > ul {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			position: absolute;
+			height: 100%;
+			width: 100%;
+			z-index: 1;
+		}
+
+		& .line {
+			position: absolute;
+			left: 6px;
+			right: 6px;
+			top: 50%;
+			width: 250px;
+			height: 1px;
+			background-color: #cbd8aa;
+			z-index: 0;
+		}
+	}
+
+	& .control-button {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		width: 64px;
+		height: 64px;
+		background-color: transparent;
+		border: solid 2px var(--primary-hover);
+		border-radius: 100%;
+		cursor: pointer;
+		transition: opacity 0.3s;
+		position: absolute;
+		z-index: 1;
+		top: 40%;
+		outline: none;
+		padding: 0;
+		margin: 0;
+		box-shadow: none;
+
+		& svg {
+			min-width: 16px;
+			min-height: 16px;
+		}
+
+		&.prev {
+			@media screen and (--tablet), screen and (--phone) {
+				display: none;
+			}
+		}
+
+		&.next {
+			@media screen and (--tablet), screen and (--phone) {
+				display: none;
+			}
+		}
+	}
+}

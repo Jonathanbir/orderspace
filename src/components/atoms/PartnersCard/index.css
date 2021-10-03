@@ -1,0 +1,46 @@
+.partners-card {
+	display: flex;
+	justify-content: center;
+	cursor: pointer;
+	margin: 40px 24px;
+	position: relative;
+
+	@media screen and (--tablet), screen and (--phone) {
+		margin: 24px 20px;
+	}
+
+	& > h2 {
+		font-size: 24px;
+		font-weight: bold;
+		line-height: 1.33;
+		letter-spacing: 1.5px;
+		margin: 0;
+		margin-top: 16px;
+		color: var(--dark-black);
+	}
+
+	& .img {
+		width: 240px;
+		height: 64px;
+		z-index: 0;
+		background-repeat: no-repeat;
+		background-size: contain;
+		background-position: center;
+
+		@media screen and (--tablet), screen and (--phone) {
+			width: 100%;
+		}
+	}
+
+	& > p {
+		color: var(--dark-black);
+		font-family: 'Noto Sans TC', sans-serif;
+		font-size: 16px;
+		font-weight: normal;
+		font-stretch: normal;
+		font-style: normal;
+		line-height: 1.5;
+		letter-spacing: normal;
+		margin: 16px auto;
+	}
+}

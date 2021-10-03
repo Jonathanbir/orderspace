@@ -1,0 +1,132 @@
+.list-card {
+	width: 500px;
+
+	& .square-box {
+		border-radius: 5%;
+		background: rgba(0, 0, 0, 1);
+		transition: all 1s ease;
+		padding: 5px;
+		margin: 5px;
+
+		& .square-box1 {
+			width: 100%;
+
+			& > img {
+				width: 50%;
+				margin: 5px;
+			}
+		}
+
+		& .square-box2 {
+			display: flex;
+			width: 100%;
+
+			& > img {
+				width: 33.33%;
+				margin: 2px;
+			}
+		}
+	}
+
+	@media screen and (--tablet), screen and (--phone) {
+		margin: 10px 20px;
+	}
+
+	& .card-img {
+		height: 265px;
+		background-color: #eee;
+		background-position: center;
+		background-size: cover;
+		background-repeat: no-repeat;
+	}
+
+	& .content {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		justify-content: space-between;
+		height: 280px;
+		padding: 24px 32px;
+
+		@media screen and (--tablet), screen and (--phone) {
+			height: 190px;
+		}
+
+		& > h2 {
+			/* stylelint-disable-next-line value-no-vendor-prefix */
+			display: -webkit-box;
+
+			/* autoprefixer: off */
+			/* stylelint-disable-next-line property-no-vendor-prefix */
+			-webkit-box-orient: vertical;
+
+			/* autoprefixer: on */
+			-webkit-line-clamp: 2;
+			overflow: hidden;
+			font-size: 24px;
+			font-weight: bold;
+			line-height: 1.33;
+			letter-spacing: 1.5px;
+			margin: 0;
+			margin-top: 12px;
+			color: var(--dark-black);
+		}
+
+		& > p {
+			/* stylelint-disable-next-line value-no-vendor-prefix */
+			display: -webkit-box;
+
+			/* autoprefixer: off */
+			/* stylelint-disable-next-line property-no-vendor-prefix */
+			-webkit-box-orient: vertical;
+
+			/* autoprefixer: on */
+			-webkit-line-clamp: 2;
+			color: var(--gray);
+			overflow: hidden;
+			margin-bottom: 6px;
+			min-height: 48px;
+
+			@media screen and (--tablet), screen and (--phone) {
+				display: none;
+			}
+		}
+
+		& > .bottom-section {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			width: 100%;
+
+			& > span {
+				font-family: 'Noto Sans TC', sans-serif;
+				font-size: 14px;
+				font-weight: normal;
+				font-stretch: normal;
+				font-style: normal;
+				line-height: 1.57;
+				letter-spacing: normal;
+				color: var(--gray-phase-1);
+			}
+
+			& .more-button > div {
+				font-size: 14px;
+				color: var(--primary);
+			}
+		}
+	}
+
+	@media screen and (--tablet), screen and (--phone) {
+		& .card-img {
+			height: 220px;
+		}
+
+		& .content {
+			padding: 24px 24px 15px 24px;
+
+			& > p {
+				display: none;
+			}
+		}
+	}
+}

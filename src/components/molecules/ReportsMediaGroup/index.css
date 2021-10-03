@@ -1,0 +1,15 @@
+.reports-media-group {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-column-gap: 40px;
+	grid-row-gap: 40px;
+	margin-top: 40px;
+	margin-bottom: 64px;
+
+	@media screen and (--phone) {
+		grid-template-columns: 1fr;
+		grid-column-gap: 0;
+		grid-row-gap: 32px;
+		margin-bottom: 32px;
+	}
+}

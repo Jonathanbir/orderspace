@@ -1,0 +1,103 @@
+.recommend-card {
+	position: relative;
+	width: 100%;
+	border-radius: 5px;
+	margin: 30px;
+	padding: 10px;
+	background-clip: padding-box;
+	box-shadow: 0px 3px 20px #333;
+	transform: translate(-30px, 0px);
+	transition: all 1.5s ease;
+	animation: float 0.8s linear 1s infinite alternate;
+
+	& .product-img {
+		position: relative;
+		z-index: 1;
+		margin: auto;
+		overflow: hidden;
+		border-radius: 100%;
+
+		& .img {
+			position: relative;
+			width: 100%;
+			height: 14vw;
+			background-size: cover;
+			background-repeat: no-repeat;
+			background-position: center;
+			box-shadow: inset 0 0 0 16px rgb(255 255 255 / 60%), 0 1px 2px rgb(0 0 / 10%);
+			cursor: pointer;
+
+			& .product-text {
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
+				position: absolute;
+				top: 182px;
+				z-index: 2;
+				width: 100%;
+				height: 100%;
+				margin: auto;
+				font-size: 30px;
+				font-weight: 200;
+				border-radius: 50%;
+				background-color: rgba(0, 0, 0, 0.4);
+				transition: all 0.3s ease;
+				margin-top: -182px;
+				transition: all 1s;
+				color: #fff;
+				opacity: 0;
+			}
+
+			@media screen and (--tablet) {
+				height: 50vw;
+			}
+			@media screen and (--phone) {
+				height: 80vw;
+			}
+		}
+
+		& .img:hover .product-text {
+			font-size: 50px;
+			font-weight: 900;
+			opacity: 0.7;
+			box-shadow: inset 0 0 0 110px rgb(200 95 66 / 40%), inset 0 0 0 16px rgb(255 255 255 / 80%),
+				0 1px 2px rgb(0 0 0 / 10%);
+		}
+	}
+
+	& > h2 {
+		position: relative;
+		z-index: 3;
+		width: 180px;
+		font-family: 'Gloria Hallelujah', cursive;
+		text-align: left;
+		font-size: 20px !important;
+		color: #fff;
+		box-shadow: 0px 3px 20px #333;
+		background-color: rgb(177, 193, 214);
+		padding: 15px;
+		margin-top: -25px;
+		margin-bottom: 14px;
+		text-shadow: 0px 0px 0px #666, 0px 0px 0px #555, 0px 0px 23px #555;
+		transform: translate(-40px, 0);
+
+		@media screen and (--tablet), screen and (--phone) {
+			font-size: 16px;
+			line-height: 1.5;
+			margin-bottom: 12px;
+		}
+	}
+
+	& > p {
+		width: 150px;
+		text-align: center;
+		font-family: 'Gloria Hallelujah', cursive;
+		font-size: 17px;
+		padding: 0;
+		color: rgba(0, 0, 99, 1);
+		border-radius: 5px;
+		margin-bottom: 15px;
+		background: #fff;
+	}
+}

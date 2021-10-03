@@ -1,0 +1,52 @@
+.wrapper {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	& .page-wrapper {
+		display: none;
+		border: 1px solid var(--light-gray);
+		background-color: white;
+		width: 32px;
+		height: 32px;
+		border-radius: 8px;
+		font-family: Montserrat, sans-serif;
+		font-size: 16px;
+		font-weight: 500;
+		font-stretch: normal;
+		font-style: normal;
+		line-height: 32px;
+		letter-spacing: normal;
+		text-align: center;
+		color: var(--light-gray);
+		cursor: pointer;
+		margin: 0 6px;
+	}
+
+	& .dots {
+		margin: 0 14px;
+	}
+
+	& .active-page {
+		border-color: var(--primary);
+		color: white;
+		background-color: var(--primary);
+	}
+
+	& .show-page {
+		display: block;
+	}
+
+	& > svg {
+		cursor: pointer;
+		margin: 0 8px;
+
+		&:hover > path {
+			fill: #1faa39;
+		}
+	}
+}
+
+.pagination {
+	margin-bottom: 20px;
+}

@@ -1,0 +1,96 @@
+/* stylelint-disable declaration-colon-newline-after */
+
+.list-card {
+	position: relative;
+	background-color: white;
+	box-shadow: 0 2px 16px 0 rgba(44, 44, 44, 0.12);
+	margin: 0 16px 10px;
+	cursor: pointer;
+
+	@media screen and (--tablet), screen and (--phone) {
+		margin: 0 6px 64px;
+	}
+
+	& .card-img {
+		width: 352px;
+		height: 400px;
+		background-color: #eee;
+		background-position: center;
+		background-size: cover;
+		background-repeat: no-repeat;
+
+		@media screen and (--tablet), screen and (--phone) {
+			width: 100%;
+		}
+	}
+
+	& > p {
+		font-family: 'NotoSansCJKtc', sans-serif;
+		position: absolute;
+		bottom: 24px;
+		z-index: 2;
+		text-shadow: 0 0 4px rgba(44, 44, 44, 0.24);
+		font-size: 24px;
+		font-weight: bold;
+		font-stretch: normal;
+		font-style: normal;
+		line-height: 1.33;
+		letter-spacing: normal;
+		color: #fff;
+		margin: auto 12px;
+	}
+
+	& .content {
+		position: absolute;
+		top: 24px;
+		left: 24px;
+
+		& .control-button {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			position: absolute;
+			right: 50px;
+			bottom: 15px;
+			width: 56px;
+			height: 56px;
+			padding: 16px;
+			border: solid 2px transparent;
+			border-radius: 100%;
+			opacity: 0;
+			transition: all 0.3s;
+
+			& svg {
+				min-width: 16px;
+				min-height: 16px;
+			}
+		}
+
+		& > .card-title {
+			display: flex;
+			flex-direction: column;
+
+			& > p {
+				font-family: 'NotoSansCJKtc', sans-serif;
+				font-size: 14px;
+				font-weight: 500;
+				font-stretch: normal;
+				font-style: normal;
+				line-height: 1.57;
+				letter-spacing: normal;
+				color: #fff;
+			}
+
+			& > h2 {
+				font-family: 'NotoSansCJKtc', sans-serif;
+				font-size: 32px;
+				font-weight: bold;
+				font-stretch: normal;
+				font-style: normal;
+				line-height: 1.25;
+				letter-spacing: 0.5px;
+				color: #fff;
+			}
+		}
+	}
+}
