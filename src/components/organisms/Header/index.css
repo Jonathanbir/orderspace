@@ -45,6 +45,21 @@
 		text-align: right;
 		width: 202px;
 
+		& p {
+			font-size: 16px;
+			font-weight: 500;
+			line-height: 1.5;
+			letter-spacing: 0.4px;
+			color: #fff;
+			cursor: pointer;
+		}
+
+		& span{
+			font-size: 15px;
+			color: #fff;
+			margin: 0 5px;
+		}
+
 		& .font-icon{
 			font-size: 15px;
 			color: #fff;

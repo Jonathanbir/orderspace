@@ -39,7 +39,7 @@
     "release": "standard-version",
     "format": "prettier --config ./.prettierrc --write \"./{,**/}/*.{js,css,json}\"",
     "component:create": "babel-node commands/component/create",
-    "server": "json-server --watch db.json"
+    "server": "json-server --watch db.json --port 3003"
   },
   "engines": {
     "node": ">=10"

@@ -57,14 +57,18 @@ const Header = ({memberName}) => {
 				/>
 			</div>
 			<Navigation navActive={active} closeMenu={closeMenu} />
-			<div className={styles.joinBtn}>
-				<span id="memName">&nbsp;</span>
-				<span id="spanLogin">
+			{memberName === "" ?
+				<div className={styles.joinBtn}>
+					<p>Login in</p>
+				</div>
+				:
+				<div className={styles.joinBtn}>
+					<span className="memName">{memberName}</span>
 					<FontAwesomeIcon className={styles.fontIcon} icon={faUser} />
-				</span>
-				<FontAwesomeIcon className={styles.fontIcon}  icon={faShoppingCart} />
-				<i class="arrow alternate circle down outline icon"></i>
-			</div>
+					<FontAwesomeIcon className={styles.fontIcon}  icon={faShoppingCart} />
+					<i class="arrow alternate circle down outline icon"></i>
+				</div>
+			}
 			{active ? (
 				<MenuClose className={styles.hamburger} onClick={toggleMenu} />
 			) : (
