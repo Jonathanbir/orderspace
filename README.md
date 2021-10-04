@@ -1,8 +1,7 @@
-# HIB
+# Oderspace
 
 [![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg?style=flat-square)](http://commitizen.github.io/cz-cli/) [![Standard Version](https://img.shields.io/badge/release-standard%20version-brightgreen.svg?style=flat-square)](https://github.com/conventional-changelog/standard-version)
 
-_新芽網路前端開發架構_
 
 ## 簡介
 
@@ -79,18 +78,6 @@ npm run storybook
 | dev:production | devlopment | production | dev        |
 | build:demo     | devlopment |            | demo       |
 | build          | production |            | production |
-
-#### CSS 標準色
-
-CSS 所用的全域變數，可以於 `config/palette.js` 設定整個網站的標準色等。
-
-```javascript
-export default {
-	standard: '#999',
-	secondary: '#DDD',
-	darkBlack: '#404040',
-};
-```
 
 #### CSS Media Query 設置
 

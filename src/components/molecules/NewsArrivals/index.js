@@ -37,7 +37,6 @@ const NewsArrivals = () => {
 				'transform: translateX(0%) scale(1);',
 			);
 		}
-		console.log('123');
 	}, 30);
 
 	const media = useMedia();

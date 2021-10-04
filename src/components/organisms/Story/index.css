@@ -1,8 +1,0 @@
-.story {
-	margin: auto;
-	padding: 80px 0;
-
-	@media screen and (--tablet), screen and (--phone) {
-		padding: 64px 0;
-	}
-}
