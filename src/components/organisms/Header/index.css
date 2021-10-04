@@ -54,13 +54,13 @@
 			cursor: pointer;
 		}
 
-		& span{
+		& span {
 			font-size: 15px;
 			color: #fff;
 			margin: 0 5px;
 		}
 
-		& .font-icon{
+		& .font-icon {
 			font-size: 15px;
 			color: #fff;
 			margin: 0 5px;

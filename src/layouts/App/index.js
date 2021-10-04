@@ -6,7 +6,7 @@ import Footer from 'components/organisms/Footer';
 
 const App = ({ children }) => (
 	<>
-		<Header memberName="Admin"/>
+		<Header memberName="Admin" />
 		<RegisterBoard />
 		<div>{children}</div>
 		<Footer />

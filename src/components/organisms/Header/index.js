@@ -4,12 +4,11 @@ import classnames from 'classnames';
 import { useModal } from 'models/modal';
 import { useRouting } from 'models/routing';
 
-import Button from 'components/atoms/Button';
 import Navigation from 'components/molecules/Navigation';
 
 import { useBoolean } from 'util/hook';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faUser ,faShoppingCart } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faUser, faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 
 import MenuOpen from 'images/icon/menu-open.inline.svg';
 import MenuClose from 'images/icon/menu-close.inline.svg';
@@ -17,7 +16,7 @@ import Logo from 'images/icon/logo-web.inline.svg';
 
 import styles from './index.css';
 
-const Header = ({memberName}) => {
+const Header = ({ memberName }) => {
 	const [, { setModalBackgroundScrollY, restoreModalBackgroundScrollY }] = useModal();
 	const [active, { toggle: toggleMenu, setFalse: closeMenu }] = useBoolean({
 		onTrue: setModalBackgroundScrollY,
@@ -57,18 +56,17 @@ const Header = ({memberName}) => {
 				/>
 			</div>
 			<Navigation navActive={active} closeMenu={closeMenu} />
-			{memberName === "" ?
+			{memberName === '' ? (
 				<div className={styles.joinBtn}>
 					<p>Login in</p>
 				</div>
-				:
+			) : (
 				<div className={styles.joinBtn}>
 					<span className="memName">{memberName}</span>
 					<FontAwesomeIcon className={styles.fontIcon} icon={faUser} />
-					<FontAwesomeIcon className={styles.fontIcon}  icon={faShoppingCart} />
-					<i class="arrow alternate circle down outline icon"></i>
+					<FontAwesomeIcon className={styles.fontIcon} icon={faShoppingCart} />
 				</div>
-			}
+			)}
 			{active ? (
 				<MenuClose className={styles.hamburger} onClick={toggleMenu} />
 			) : (
