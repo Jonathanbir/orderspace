@@ -45,6 +45,13 @@
 		text-align: right;
 		width: 202px;
 
+		& .font-icon{
+			font-size: 15px;
+			color: #fff;
+			margin: 0 5px;
+			cursor: pointer;
+		}
+
 		& > .button {
 			border-radius: 8px;
 

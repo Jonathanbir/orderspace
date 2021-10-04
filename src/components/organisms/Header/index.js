@@ -8,6 +8,8 @@ import Button from 'components/atoms/Button';
 import Navigation from 'components/molecules/Navigation';
 
 import { useBoolean } from 'util/hook';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faUser ,faShoppingCart } from '@fortawesome/free-solid-svg-icons'
 
 import MenuOpen from 'images/icon/menu-open.inline.svg';
 import MenuClose from 'images/icon/menu-close.inline.svg';
@@ -15,7 +17,7 @@ import Logo from 'images/icon/logo-web.inline.svg';
 
 import styles from './index.css';
 
-const Header = () => {
+const Header = ({memberName}) => {
 	const [, { setModalBackgroundScrollY, restoreModalBackgroundScrollY }] = useModal();
 	const [active, { toggle: toggleMenu, setFalse: closeMenu }] = useBoolean({
 		onTrue: setModalBackgroundScrollY,
@@ -56,17 +58,11 @@ const Header = () => {
 			</div>
 			<Navigation navActive={active} closeMenu={closeMenu} />
 			<div className={styles.joinBtn}>
-				{/* <Button className={styles.button} color="primary" onClick={() => {}}>
-					加入大誠
-				</Button> */}
 				<span id="memName">&nbsp;</span>
 				<span id="spanLogin">
-					<i class="fa fa-user-o"></i>
+					<FontAwesomeIcon className={styles.fontIcon} icon={faUser} />
 				</span>
-				<a href="#" type="button" name="btn" value="10+20=?[0]" onClick="buyCar();">
-					<i class="shopping cart icon"></i>
-				</a>
-				<i class="shopping cart icon"></i>
+				<FontAwesomeIcon className={styles.fontIcon}  icon={faShoppingCart} />
 				<i class="arrow alternate circle down outline icon"></i>
 			</div>
 			{active ? (
