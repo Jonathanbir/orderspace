@@ -2,8 +2,6 @@ import React, { useState } from 'react';
 import Slider from 'react-slick';
 import classnames from 'classnames';
 
-import { useHome } from 'models/home';
-
 import { useMedia } from 'util/hook/useMedia';
 
 import NewsTableCard from 'components/atoms/NewsTableCard';
@@ -29,7 +27,6 @@ const NewsArrivalsSection = () => {
 	const media = useMedia();
 	const [currentIdx, setCurrentIdx] = useState(0);
 	const [selected, setSelected] = useState(0);
-	// const [{ newsList }] = useHome();
 	const newsList = [
 		{
 			cover: 'https://i.pinimg.com/originals/95/35/99/9535997182088586a435a276df908ea6.jpg',

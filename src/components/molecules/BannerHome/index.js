@@ -3,8 +3,6 @@ import React, { useState } from 'react';
 import classnames from 'classnames';
 import Slider from 'react-slick';
 
-import { useHome } from 'models/home';
-
 import { useMedia } from 'util/hook/useMedia';
 
 import Link from 'components/atoms/Link';

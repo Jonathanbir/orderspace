@@ -51,6 +51,4 @@ app.listen(3000, err => {
 	console.log(`Proxy ${process.env.PROXY} server ${host} start at localhost:9000`);
 
 	proxyServer.listen(9000);
-
-	return console.log('Listening at http://localhost:3000/');
 });

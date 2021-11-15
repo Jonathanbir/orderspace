@@ -1,8 +1,6 @@
 import { useState, useEffect, useMemo, lazy, useRef, useCallback } from 'react';
 import UniversalRouter from 'universal-router';
 
-import { routeChange } from 'models/routing';
-
 import useLocation from './useLocation';
 
 const options = {
@@ -75,10 +73,6 @@ const useRouter = (routes, history, store) => {
 	useEffect(() => {
 		asyncLocationChange();
 	}, [asyncLocationChange]);
-
-	useEffect(() => {
-		store.dispatch(routeChange(location));
-	}, [location]);
 
 	return Component;
 };

@@ -3,6 +3,7 @@
 /* eslint-disable no-shadow */
 /* eslint-disable no-mixed-operators */
 import React, { useEffect, useState } from 'react';
+import { connect } from 'react-redux';
 
 import Tab from 'components/atoms/Tab';
 import ShopGroup from 'components/molecules/ShopGroup';
@@ -11,7 +12,12 @@ import { scrollToOffset } from 'util/helper';
 
 import styles from './index.css';
 
-const ShopContent = () => {
+const mapStateToProps = state => {
+	return { clothes: state.clothes };
+};
+
+const ShopContent = props => {
+	console.log('props', props);
 	const [selected, setSelected] = useState(0);
 
 	useEffect(() => {
@@ -38,4 +44,4 @@ const ShopContent = () => {
 	);
 };
 
-export default ShopContent;
+export default connect(mapStateToProps)(ShopContent);

@@ -10,14 +10,16 @@ import 'normalize.css';
 import './global.css';
 
 import Router from 'layouts/Router';
+import { createStore } from 'redux';
 
 import { extendDayjsPlugin } from 'util/external';
 
 import configureStore from './store';
 import history from './store/history';
 import routes from './routes';
+import reducers from './models/reducers';
 
-const store = configureStore({});
+const store = configureStore(createStore(reducers));
 
 extendDayjsPlugin();
 

@@ -50,7 +50,7 @@ const Header = ({ memberName }) => {
 					onKeyPress={() => {}}
 					tabIndex={0}
 					onClick={() => {
-						pushRoute({ pathname: '/', search: '' });
+						pushRoute({ pathname: '/' });
 						closeMenu();
 					}}
 				/>

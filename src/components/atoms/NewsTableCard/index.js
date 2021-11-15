@@ -13,7 +13,7 @@ const { SELF_HOST_ENDPOINT } = process.env;
 
 const NewsTableCard = ({ className, blur, data }) => {
 	const { cover, img1, img2, id, status, subtitle, title, type, publishTime } = data;
-	console.log(SELF_HOST_ENDPOINT);
+
 	return (
 		<Link to={`/news/${id}`}>
 			<div

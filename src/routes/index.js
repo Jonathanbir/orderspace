@@ -1,7 +1,5 @@
 import React from 'react';
 
-import { fetchHome } from 'models/home';
-
 import NewsRoute from './News';
 import ShopRoute from './Shop';
 import BrandRoute from './Brand';
@@ -22,12 +20,6 @@ const routes = {
 			path: '',
 			components: () => [import(/* webpackChunkName: 'home' */ './Home')],
 			render: ([Home]) => <Home />,
-			onEnter: async ({ next, store }) => {
-				await store.dispatch(fetchHome());
-				const children = await next();
-
-				return children;
-			},
 		},
 		NewsRoute,
 		ShopRoute,
