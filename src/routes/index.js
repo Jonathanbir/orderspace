@@ -5,6 +5,7 @@ import ShopRoute from './Shop';
 import BrandRoute from './Brand';
 import ShowRoute from './Show';
 import ContactRoute from './Contact';
+import LoginRoute from './Login';
 
 const routes = {
 	path: '/',
@@ -26,6 +27,7 @@ const routes = {
 		BrandRoute,
 		ContactRoute,
 		ShowRoute,
+		LoginRoute,
 	],
 };
 

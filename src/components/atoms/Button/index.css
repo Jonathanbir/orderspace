@@ -1,12 +1,14 @@
 .button {
 	display: inline-flex;
 	align-items: center;
-	border-radius: 24px;
+	justify-content: center;
+	width: 100px;
 	height: 40px;
-	background-color: var(--primary);
+	background-color: #aaa;
 	color: white;
 	border: none;
 	padding: 0;
+	border-radius: 5px;
 	cursor: pointer;
 	transition: background-color 0.3s, border-color 0.3s;
 
@@ -31,7 +33,7 @@
 	}
 
 	&:hover {
-		background-color: var(--primary-hover);
+		background-color: #000;
 	}
 
 	&.disabled {

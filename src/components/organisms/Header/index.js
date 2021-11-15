@@ -5,6 +5,9 @@ import { useModal } from 'models/modal';
 import { useRouting } from 'models/routing';
 
 import Navigation from 'components/molecules/Navigation';
+import Panel from 'components/molecules/Panel';
+import UserProfile from 'components/molecules/UserProfile';
+import UserLogin from 'components/molecules/UserLogin';
 
 import { useBoolean } from 'util/hook';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -24,6 +27,29 @@ const Header = ({ memberName }) => {
 	});
 	const [scroll, setScroll] = useState(false);
 	const [, { pushRoute }] = useRouting();
+	const toProfile = () => {
+		memberName === ''
+			? Panel.open({
+					component: UserLogin,
+					props: '',
+					callback: data => {
+						console.log('user login data', data);
+						if (data === 'logout') {
+							props.history.go(0);
+						}
+					},
+			  })
+			: Panel.open({
+					component: UserProfile,
+					props: memberName,
+					callback: data => {
+						console.log('data', data);
+						if (data === 'logout') {
+							props.history.go(0);
+						}
+					},
+			  });
+	};
 
 	useEffect(() => {
 		window.addEventListener('scroll', () => {
@@ -57,13 +83,13 @@ const Header = ({ memberName }) => {
 			</div>
 			<Navigation navActive={active} closeMenu={closeMenu} />
 			{memberName === '' ? (
-				<div className={styles.joinBtn}>
+				<div className={styles.joinBtn} onClick={toProfile}>
 					<p>Login in</p>
 				</div>
 			) : (
 				<div className={styles.joinBtn}>
-					<span className="memName">{memberName}</span>
-					<FontAwesomeIcon className={styles.fontIcon} icon={faUser} />
+					<span>{memberName}</span>
+					<FontAwesomeIcon className={styles.fontIcon} icon={faUser} onClick={toProfile} />
 					<FontAwesomeIcon className={styles.fontIcon} icon={faShoppingCart} />
 				</div>
 			)}
