@@ -4,6 +4,7 @@ import axios from 'commons/axios';
 import decode from 'jwt-decode';
 
 import ShopProductContent from 'components/molecules/ShopProductContent';
+import ToolBox from 'components/molecules/ToolBox';
 
 import { useMedia } from 'util/hook/useMedia';
 
@@ -37,6 +38,7 @@ const ShopProductGroup = ({ tabSelected }) => {
 		sourceProducts: [],
 		cartNum: 0,
 	});
+	const [cartNum, setCartNum] = useState(0);
 
 	useEffect(() => {
 		axios.get('/products').then(response => {
@@ -47,22 +49,39 @@ const ShopProductGroup = ({ tabSelected }) => {
 		});
 		updateCartNum();
 	}, []);
-	console.log('products', products);
+
+	console.log('cartNum', products.cartNum);
 	const updateCartNum = async () => {
+		console.log('!!');
 		const cartNum = await initCartNum();
-		setProducts({ cartNum: cartNum });
+		setCartNum(cartNum);
 	};
 
 	const initCartNum = async () => {
 		const user = getUser() || {};
-		const res = await axios.get('/carts', {
+		const res = await axios.get('', {
 			params: {
 				userId: user.email,
 			},
 		});
+		console.log('res', res);
 		const carts = res.data || [];
 		const cartNum = carts.map(cart => cart.mount).reduce((a, value) => a + value, 0);
 		return cartNum;
+	};
+
+	const search = text => {
+		console.log('text', text);
+		//1.  get New Array
+		let _products = [...products.sourceProducts];
+		//2. Filter New Array 回調函數
+		_products = _products.filter(p => {
+			const matchArray = p.name.match(new RegExp(text, 'gi'));
+			// return matchArray !== null (matchArray不等於空)
+			return !!matchArray;
+		});
+		//3. set State
+		setProducts({ products: _products, sourceProducts: products.sourceProducts });
 	};
 
 	const shirtsData = [
@@ -219,6 +238,7 @@ const ShopProductGroup = ({ tabSelected }) => {
 
 	return (
 		<div className={styles.productWrapper}>
+			<ToolBox search={search} cartNum={cartNum} />
 			{tabSelected === 0 ? (
 				<>
 					<ShopProductContent title="CLOTHES" data={shirtsData} />
