@@ -3,7 +3,6 @@ import decode from 'jwt-decode';
 const JWT = 'storage_token_id';
 
 const setToken = token => {
-	console.log('token', token);
 	localStorage.setItem(JWT, token);
 };
 

@@ -36,7 +36,6 @@ class Panel extends React.Component {
 			active: false,
 		});
 		this.state.callback(data);
-		console.log('data close', data);
 	};
 
 	render() {

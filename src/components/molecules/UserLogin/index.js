@@ -1,4 +1,4 @@
-import React, { setState } from 'react';
+import React from 'react';
 import axios from '../../../commons/axios';
 import { useForm } from 'react-hook-form';
 import { toast } from 'react-toastify';
@@ -8,11 +8,10 @@ import styles from './index.css';
 const JWT = 'storage_token_id';
 
 const setToken = token => {
-	console.log('token', token);
 	localStorage.setItem(JWT, token);
 };
 
-export default function UserLogin(props) {
+const UserLogin = props => {
 	const {
 		register,
 		handleSubmit,
@@ -28,7 +27,8 @@ export default function UserLogin(props) {
 			setToken(jwToken);
 			toast.success('Login Success');
 			//4.跳轉到首頁
-			props.history.push('/');
+			props.close('login');
+			window.location.reload();
 		} catch (error) {
 			const message = error.response.data.message;
 			toast.error('Incorrect email or password');
@@ -82,4 +82,5 @@ export default function UserLogin(props) {
 			</form>
 		</div>
 	);
-}
+};
+export default UserLogin;

@@ -28,14 +28,12 @@ const Header = props => {
 	});
 	const [scroll, setScroll] = useState(false);
 	const [, { pushRoute }] = useRouting();
-	console.log('props', props.user.nickname);
 	const toProfile = () => {
 		props.user.nickname
 			? Panel.open({
 					component: UserProfile,
 					props: props,
 					callback: data => {
-						console.log('data', data);
 						if (data === 'logout') {
 							props.history.go(0);
 						}
@@ -45,7 +43,6 @@ const Header = props => {
 					component: UserLogin,
 					props: '',
 					callback: data => {
-						console.log('user login data', data);
 						if (data === 'logout') {
 							props.history.go(0);
 						}
@@ -57,7 +54,6 @@ const Header = props => {
 			component: UserRegister,
 			props: '',
 			callback: data => {
-				console.log('user login data', data);
 				if (data === 'logout') {
 					props.history.go(0);
 				}
@@ -90,6 +86,7 @@ const Header = props => {
 					onKeyPress={() => {}}
 					tabIndex={0}
 					onClick={() => {
+						console.log('home');
 						pushRoute({ pathname: '/' });
 						closeMenu();
 					}}

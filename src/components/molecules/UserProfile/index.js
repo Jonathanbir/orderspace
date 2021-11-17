@@ -10,6 +10,7 @@ const isLogout = () => {
 const UserProfile = props => {
 	const logout = () => {
 		isLogout();
+		window.location.reload();
 		props.close('logout');
 	};
 

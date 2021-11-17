@@ -17,7 +17,6 @@ const mapStateToProps = state => {
 };
 
 const ShopContent = props => {
-	console.log('props', props);
 	const [selected, setSelected] = useState(0);
 
 	useEffect(() => {
