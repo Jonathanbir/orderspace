@@ -8,14 +8,14 @@ const ProductCard = ({ data }) => (
 			<div
 				className={styles.img}
 				style={{
-					backgroundImage: `url(${data.img})`,
+					backgroundImage: `url(${data.image})`,
 				}}
 			>
 				<div className={styles.productText}>BUY</div>
 			</div>
 		</div>
-		<h2>{data.title}</h2>
-		<p>{data.price}</p>
+		<h2>{data.name}</h2>
+		<p>＄{data.price}</p>
 	</div>
 );
 
