@@ -42,6 +42,7 @@
 	}
 
 	& > .join-btn {
+		display: flex;
 		text-align: right;
 		width: 202px;
 
@@ -50,6 +51,7 @@
 			font-weight: 500;
 			line-height: 1.5;
 			letter-spacing: 0.4px;
+			padding: 10px;
 			color: #fff;
 			cursor: pointer;
 		}

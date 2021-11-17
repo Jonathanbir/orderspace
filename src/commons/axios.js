@@ -1,5 +1,11 @@
 import _axios from 'axios';
 
+const JWT = 'storage_token_id';
+
+const getToken = token => {
+	return localStorage.getItem(JWT);
+};
+
 const axios = baseURL => {
 	const instance = _axios.create({
 		baseURL: baseURL || 'http://localhost:3003/',
@@ -8,7 +14,7 @@ const axios = baseURL => {
 
 	instance.interceptors.request.use(
 		config => {
-			const jwToken = global.auth.getToken();
+			const jwToken = getToken();
 			config.headers['Authorization'] = 'Bearer ' + jwToken;
 			// Do something before request is sent
 			return config;

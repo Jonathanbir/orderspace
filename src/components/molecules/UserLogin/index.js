@@ -5,6 +5,13 @@ import { toast } from 'react-toastify';
 
 import styles from './index.css';
 
+const JWT = 'storage_token_id';
+
+const setToken = token => {
+	console.log('token', token);
+	localStorage.setItem(JWT, token);
+};
+
 export default function UserLogin(props) {
 	const {
 		register,
@@ -18,7 +25,7 @@ export default function UserLogin(props) {
 			const { email, password } = data;
 			const res = await axios.post('/auth/login', { email, password });
 			const jwToken = res.data;
-			global.auth.setToken(jwToken);
+			setToken(jwToken);
 			toast.success('Login Success');
 			//4.跳轉到首頁
 			props.history.push('/');
@@ -30,7 +37,7 @@ export default function UserLogin(props) {
 
 	return (
 		<div className="login-wrapper">
-			<form className="login-box" onSubmit={handleSubmit(onSubmit)}>
+			<form className="box login-box" onSubmit={handleSubmit(onSubmit)}>
 				<div className="field">
 					<label className="label">Email</label>
 					<div className="control">

@@ -4,9 +4,8 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	height: 100vh;
 	& .login-box {
-		width: 100%;
+		width: 350px;
 		padding: 1.5rem 1.5rem 2rem 1.5rem;
 	}
 

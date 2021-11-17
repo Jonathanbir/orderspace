@@ -31,7 +31,9 @@ const Tab = ({ className, tabs = [], selected = 0, fullWidth, setSelected = () =
 		<div className={classnames(styles.tabWrapper, className)} ref={wrapperRef}>
 			<ul
 				className={
-					fullWidth === true ? classnames(styles.container, styles.fullWidth) : styles.container
+					fullWidth === true
+						? classnames(styles.tabContainer, styles.fullWidth)
+						: styles.tabContainer
 				}
 			>
 				{tabs.map((t, idx) => (

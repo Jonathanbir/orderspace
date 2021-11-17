@@ -8,6 +8,7 @@ import Navigation from 'components/molecules/Navigation';
 import Panel from 'components/molecules/Panel';
 import UserProfile from 'components/molecules/UserProfile';
 import UserLogin from 'components/molecules/UserLogin';
+import UserRegister from 'components/molecules/UserRegister';
 
 import { useBoolean } from 'util/hook';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -19,7 +20,7 @@ import Logo from 'images/icon/logo-web.inline.svg';
 
 import styles from './index.css';
 
-const Header = ({ memberName }) => {
+const Header = props => {
 	const [, { setModalBackgroundScrollY, restoreModalBackgroundScrollY }] = useModal();
 	const [active, { toggle: toggleMenu, setFalse: closeMenu }] = useBoolean({
 		onTrue: setModalBackgroundScrollY,
@@ -27,9 +28,20 @@ const Header = ({ memberName }) => {
 	});
 	const [scroll, setScroll] = useState(false);
 	const [, { pushRoute }] = useRouting();
+	console.log('props', props.user.nickname);
 	const toProfile = () => {
-		memberName === ''
+		props.user.nickname
 			? Panel.open({
+					component: UserProfile,
+					props: props,
+					callback: data => {
+						console.log('data', data);
+						if (data === 'logout') {
+							props.history.go(0);
+						}
+					},
+			  })
+			: Panel.open({
 					component: UserLogin,
 					props: '',
 					callback: data => {
@@ -38,17 +50,19 @@ const Header = ({ memberName }) => {
 							props.history.go(0);
 						}
 					},
-			  })
-			: Panel.open({
-					component: UserProfile,
-					props: memberName,
-					callback: data => {
-						console.log('data', data);
-						if (data === 'logout') {
-							props.history.go(0);
-						}
-					},
 			  });
+	};
+	const toRegister = () => {
+		Panel.open({
+			component: UserRegister,
+			props: '',
+			callback: data => {
+				console.log('user login data', data);
+				if (data === 'logout') {
+					props.history.go(0);
+				}
+			},
+		});
 	};
 
 	useEffect(() => {
@@ -82,15 +96,16 @@ const Header = ({ memberName }) => {
 				/>
 			</div>
 			<Navigation navActive={active} closeMenu={closeMenu} />
-			{memberName === '' ? (
-				<div className={styles.joinBtn} onClick={toProfile}>
-					<p>Login in</p>
+			{props.user.nickname ? (
+				<div className={styles.joinBtn}>
+					<span>{props.user.nickname}</span>
+					<FontAwesomeIcon className={styles.fontIcon} icon={faUser} onClick={toProfile} />
+					<FontAwesomeIcon className={styles.fontIcon} icon={faShoppingCart} />
 				</div>
 			) : (
 				<div className={styles.joinBtn}>
-					<span>{memberName}</span>
-					<FontAwesomeIcon className={styles.fontIcon} icon={faUser} onClick={toProfile} />
-					<FontAwesomeIcon className={styles.fontIcon} icon={faShoppingCart} />
+					<p onClick={toProfile}>Login in</p>
+					<p onClick={toRegister}>Register</p>
 				</div>
 			)}
 			{active ? (

@@ -1,7 +1,8 @@
 import React, { setState } from 'react';
-import axios from '../../../commons/axios';
+import axios from 'commons/axios';
 import { useForm } from 'react-hook-form';
 import { toast } from 'react-toastify';
+
 import styles from './index.css';
 
 const JWT = 'storage_token_id';
@@ -11,7 +12,7 @@ const setToken = token => {
 	localStorage.setItem(JWT, token);
 };
 
-export default function Login(props) {
+export default function UserRegister(props) {
 	const {
 		register,
 		handleSubmit,
@@ -19,14 +20,18 @@ export default function Login(props) {
 	} = useForm();
 
 	const onSubmit = async data => {
-		//2.獲取表單數據
-		//3.處理登陸邏輯
+		//3.處理註冊邏輯
 		try {
-			const { email, password } = data;
-			const res = await axios.post('/auth/login', { email, password });
+			const { nickname, email, password } = data;
+			const res = await axios.post('/auth/register', {
+				nickname,
+				email,
+				password,
+				type: 0,
+			});
 			const jwToken = res.data;
 			setToken(jwToken);
-			toast.success('Login Success');
+			toast.success('Register Success');
 			//4.跳轉到首頁
 			props.history.push('/');
 		} catch (error) {
@@ -36,8 +41,23 @@ export default function Login(props) {
 	};
 
 	return (
-		<div className="login-wrapper">
+		<div className={styles.loginWrapper}>
 			<form className="box login-box" onSubmit={handleSubmit(onSubmit)}>
+				<div className="field">
+					<label className="label">Nickname</label>
+					<div className="control">
+						<input
+							className={`input ${errors.nickname && 'is-danger'}`}
+							type="text"
+							placeholder="Nickname"
+							name="email"
+							{...register('nickname', {
+								required: 'Nickname is required',
+							})}
+						/>
+						{errors.nickname && <span>{errors.nickname.message}</span>}
+					</div>
+				</div>
 				<div className="field">
 					<label className="label">Email</label>
 					<div className="control">
@@ -77,7 +97,7 @@ export default function Login(props) {
 					</div>
 				</div>
 				<div class="control">
-					<button class="button is-fullwidth is-danger">Login</button>
+					<button class="button is-fullwidth is-danger">Submit</button>
 				</div>
 			</form>
 		</div>
