@@ -1,17 +1,14 @@
 /* eslint-disable react/destructuring-assignment */
 import React, { useState } from 'react';
-
-import classnames from 'classnames';
-
 import { useMedia } from 'util/hook/useMedia';
 
 import ProductCard from 'components/atoms/ProductCard ';
-
 import Pagination from 'components/molecules/Pagination';
 
 import styles from './index.css';
 
 const ShopProductContent = props => {
+	console.log('props', props);
 	const media = useMedia();
 	const [currentIdx, setCurrentIdx] = useState(0);
 	const [selected, setSelected] = useState(0);

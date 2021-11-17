@@ -372,7 +372,6 @@ label:hover i {
 
 input {
 	position: absolute;
-	left: -9999px;
 }
 
 input:checked + label {

@@ -9,6 +9,7 @@ import Panel from 'components/molecules/Panel';
 import UserProfile from 'components/molecules/UserProfile';
 import UserLogin from 'components/molecules/UserLogin';
 import UserRegister from 'components/molecules/UserRegister';
+import Cart from 'components/molecules/Cart';
 
 import { useBoolean } from 'util/hook';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -26,6 +27,7 @@ const Header = props => {
 		onTrue: setModalBackgroundScrollY,
 		onFalse: restoreModalBackgroundScrollY,
 	});
+
 	const [scroll, setScroll] = useState(false);
 	const [, { pushRoute }] = useRouting();
 	const toProfile = () => {
@@ -49,9 +51,22 @@ const Header = props => {
 					},
 			  });
 	};
+
 	const toRegister = () => {
 		Panel.open({
 			component: UserRegister,
+			props: '',
+			callback: data => {
+				if (data === 'logout') {
+					props.history.go(0);
+				}
+			},
+		});
+	};
+
+	const toCart = () => {
+		Panel.open({
+			component: Cart,
 			props: '',
 			callback: data => {
 				if (data === 'logout') {
@@ -97,7 +112,7 @@ const Header = props => {
 				<div className={styles.joinBtn}>
 					<span>{props.user.nickname}</span>
 					<FontAwesomeIcon className={styles.fontIcon} icon={faUser} onClick={toProfile} />
-					<FontAwesomeIcon className={styles.fontIcon} icon={faShoppingCart} />
+					<FontAwesomeIcon className={styles.fontIcon} icon={faShoppingCart} onClick={toCart} />
 				</div>
 			) : (
 				<div className={styles.joinBtn}>
