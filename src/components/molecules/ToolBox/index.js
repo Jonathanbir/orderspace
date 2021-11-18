@@ -1,5 +1,8 @@
 import React from 'react';
 import { toast } from 'react-toastify';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
+
 import styles from './index.css';
 
 class ToolBox extends React.Component {
@@ -35,7 +38,7 @@ class ToolBox extends React.Component {
 		return (
 			<div>
 				<div className="tool-box">
-					<div className="logo-text">Store</div>
+					<div className="logo-text"></div>
 					<div className="search-box">
 						<div className="field has-addons">
 							<p className="control">
@@ -53,7 +56,7 @@ class ToolBox extends React.Component {
 						</div>
 					</div>
 					<div className="cart-box" onClick={this.goCart}>
-						<i className="fas fa-shopping-cart"></i>
+						<FontAwesomeIcon className={styles.fontIcon} icon={faShoppingCart} />
 						<span className="cart-num">({this.props.cartNum})</span>
 					</div>
 				</div>

@@ -32,7 +32,7 @@ const CartItem = props => {
 
 	return (
 		<div className="columns is-vcentered">
-			<div className="column is-narrow">
+			<div className="column">
 				<span className="close" onClick={deleteCart}>
 					x
 				</span>
@@ -40,7 +40,7 @@ const CartItem = props => {
 			<div className="column">
 				<img src={image} alt={name} width="100" />
 			</div>
-			<div className="column cart-name is-narrow">Nike Paul Gerore 12</div>
+			<div className="column cart-name is-narrow">{name}</div>
 			<div className="column">
 				<span className="price">${formatPrice(price)}</span>
 			</div>

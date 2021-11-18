@@ -8,7 +8,6 @@ import Pagination from 'components/molecules/Pagination';
 import styles from './index.css';
 
 const ShopProductContent = props => {
-	console.log('props', props);
 	const media = useMedia();
 	const [currentIdx, setCurrentIdx] = useState(0);
 	const [selected, setSelected] = useState(0);
@@ -19,7 +18,13 @@ const ShopProductContent = props => {
 				<div className={styles.productContainer}>
 					{props.data.length > 0 &&
 						props.data.map((_data, idx) => (
-							<ProductCard idx={idx} key={_data.id} blur={idx !== selected} data={_data} />
+							<ProductCard
+								idx={idx}
+								key={_data.id}
+								blur={idx !== selected}
+								data={_data}
+								updateCartNum={props.updateCartNum}
+							/>
 						))}
 				</div>
 				<Pagination className="pagination" activePage="1" pages="4" />

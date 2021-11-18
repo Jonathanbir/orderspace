@@ -48,7 +48,7 @@ class Panel extends React.Component {
 				<div className="over-layer" onClick={() => this.close()}></div>
 				<div className="panel">
 					<div className="head">
-						<span className="close" onClick={() => this.close()}>
+						<span className="close close-panel-btn" onClick={() => this.close()}>
 							x
 						</span>
 						{this.state.component}
