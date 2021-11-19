@@ -5,10 +5,12 @@ import styles from './index.css';
 
 class AddInventory extends React.Component {
 	state = {
+		id: '',
 		name: '',
 		price: '',
 		tags: '',
 		image: '',
+		categories: 'shirt',
 		status: 'available',
 	};
 
@@ -23,7 +25,6 @@ class AddInventory extends React.Component {
 	submit = e => {
 		e.preventDefault();
 		const product = { ...this.state };
-		console.log('product', product);
 		axios.post('products', product).then(res => {
 			this.props.close(res.data);
 			toast.success('Add Success');
@@ -80,6 +81,23 @@ class AddInventory extends React.Component {
 								value={this.state.image}
 								onChange={this.handleChange}
 							/>
+						</div>
+					</div>
+					<div className="field">
+						<div className="control">
+							<label className="label">categories</label>
+							<div className="select is-fullwidth">
+								<select
+									name="categories"
+									value={this.state.categories}
+									onChange={this.handleChange}
+								>
+									<option>shirt</option>
+									<option>jacket</option>
+									<option>accesory</option>
+									<option>shoes</option>
+								</select>
+							</div>
 						</div>
 					</div>
 					<div className="field">

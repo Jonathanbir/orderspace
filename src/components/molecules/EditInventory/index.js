@@ -10,12 +10,13 @@ class EditInventory extends React.Component {
 		price: '',
 		tags: '',
 		image: '',
+		categories: '',
 		status: 'available',
 	};
 
 	componentDidMount() {
-		const { id, name, image, tags, price, status } = this.props.product;
-		this.setState({ id, name, image, tags, price, status });
+		const { id, name, image, tags, price, categories, status } = this.props.product;
+		this.setState({ id, name, image, tags, price, categories, status });
 	}
 
 	handleChange = e => {
@@ -95,6 +96,23 @@ class EditInventory extends React.Component {
 								value={this.state.image}
 								onChange={this.handleChange}
 							/>
+						</div>
+					</div>
+					<div className="field">
+						<div className="control">
+							<label className="label">categories</label>
+							<div className="select is-fullwidth">
+								<select
+									name="categories"
+									value={this.state.categories}
+									onChange={this.handleChange}
+								>
+									<option>shirt</option>
+									<option>jacket</option>
+									<option>accesory</option>
+									<option>shoes</option>
+								</select>
+							</div>
 						</div>
 					</div>
 					<div className="field">
