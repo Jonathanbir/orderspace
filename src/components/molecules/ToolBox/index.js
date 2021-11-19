@@ -2,6 +2,10 @@ import React from 'react';
 import { toast } from 'react-toastify';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
+import { faPlusSquare } from '@fortawesome/free-solid-svg-icons';
+import Panel from 'components/molecules/Panel';
+import Cart from 'components/molecules/Cart';
+import AddInventory from 'components/molecules/AddInventory';
 
 import styles from './index.css';
 
@@ -34,11 +38,41 @@ class ToolBox extends React.Component {
 		this.props.history.push('/cart');
 	};
 
+	toCart = () => {
+		Panel.open({
+			component: Cart,
+			props: '',
+			callback: data => {
+				if (data === 'logout') {
+					props.history.go(0);
+				}
+			},
+		});
+	};
+
+	toAdd = () => {
+		Panel.open({
+			component: AddInventory,
+			callback: data => {
+				console.log('products data', data);
+				if (data) {
+					this.add(data);
+				}
+			},
+		});
+	};
+
 	render() {
 		return (
 			<div>
 				<div className="tool-box">
-					<div className="logo-text"></div>
+					<div className="logo-text">
+						<FontAwesomeIcon
+							className={styles.fontPlusIcon}
+							icon={faPlusSquare}
+							onClick={this.toAdd}
+						/>
+					</div>
 					<div className="search-box">
 						<div className="field has-addons">
 							<p className="control">
@@ -56,7 +90,11 @@ class ToolBox extends React.Component {
 						</div>
 					</div>
 					<div className="cart-box" onClick={this.goCart}>
-						<FontAwesomeIcon className={styles.fontIcon} icon={faShoppingCart} />
+						<FontAwesomeIcon
+							className={styles.fontIcon}
+							icon={faShoppingCart}
+							onClick={this.toCart}
+						/>
 						<span className="cart-num">({this.props.cartNum})</span>
 					</div>
 				</div>

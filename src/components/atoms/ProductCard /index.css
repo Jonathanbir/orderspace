@@ -102,4 +102,11 @@
 		bottom: 30px;
 		cursor: pointer;
 	}
+
+	& .edit-btn {
+		position: absolute;
+		right: 10px;
+		cursor: pointer;
+		z-index: 3;
+	}
 }

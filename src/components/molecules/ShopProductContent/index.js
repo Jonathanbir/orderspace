@@ -23,7 +23,9 @@ const ShopProductContent = props => {
 								key={_data.id}
 								blur={idx !== selected}
 								data={_data}
+								deleteProduct={props.delete}
 								updateCartNum={props.updateCartNum}
+								update={props.update}
 							/>
 						))}
 				</div>

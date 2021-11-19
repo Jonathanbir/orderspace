@@ -79,6 +79,20 @@ const ShopProductGroup = ({ tabSelected }) => {
 		setProducts({ products: _products, sourceProducts: products.sourceProducts });
 	};
 
+	const update = product => {
+		const _products = [...products.products];
+		const _index = _products.findIndex(p => p.id === product.id);
+		_products.splice(_index, 1, product);
+		const _sProducts = [...products.sourceProducts];
+		const _sIndex = _sProducts.findIndex(p => p.id === product.id);
+		_sProducts.splice(_sIndex, 1, product);
+
+		setProducts({
+			products: _products,
+			sourceProducts: _sProducts,
+		});
+	};
+
 	const deleteProduct = id => {
 		const _products = products.products.filter(p => p.id !== id);
 		const _sProducts = products.sourceProducts.filter(p => p.id !== id);
@@ -251,6 +265,7 @@ const ShopProductGroup = ({ tabSelected }) => {
 						data={shirtsData}
 						updateCartNum={updateCartNum}
 						delete={deleteProduct}
+						update={update}
 					/>
 				</>
 			) : tabSelected === 1 ? (
@@ -260,6 +275,7 @@ const ShopProductGroup = ({ tabSelected }) => {
 						data={jacketsData}
 						updateCartNum={updateCartNum}
 						delete={deleteProduct}
+						update={update}
 					/>
 				</>
 			) : tabSelected === 2 ? (
@@ -269,6 +285,7 @@ const ShopProductGroup = ({ tabSelected }) => {
 						data={accesoryData}
 						updateCartNum={updateCartNum}
 						delete={deleteProduct}
+						update={update}
 					/>
 				</>
 			) : (
@@ -278,6 +295,7 @@ const ShopProductGroup = ({ tabSelected }) => {
 						data={shoesData}
 						updateCartNum={updateCartNum}
 						delete={deleteProduct}
+						update={update}
 					/>
 				</>
 			)}
