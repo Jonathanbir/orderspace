@@ -74,7 +74,7 @@ const ProductCard = ({ data, deleteProduct, update, updateCartNum }) => {
 				await axios.post('carts', cart).then(res => console.log(res.data));
 			}
 			toast.success('Add Cart Success');
-			updateCartNum;
+			updateCartNum();
 		} catch (error) {
 			toast.error('Add Cart Failed');
 		}

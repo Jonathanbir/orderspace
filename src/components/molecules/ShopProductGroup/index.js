@@ -4,32 +4,10 @@ import axios from 'commons/axios';
 import decode from 'jwt-decode';
 
 import ShopProductContent from 'components/molecules/ShopProductContent';
-import ToolBox from 'components/molecules/ToolBox';
 
 import { useMedia } from 'util/hook/useMedia';
 
 import styles from './index.css';
-
-const JWT = 'storage_token_id';
-
-const getUser = () => {
-	const jwToken = getToken();
-	if (isLogin()) {
-		const user = decode(jwToken);
-		return user;
-	} else {
-		return null;
-	}
-};
-
-const getToken = token => {
-	return localStorage.getItem(JWT);
-};
-
-const isLogin = () => {
-	const jwToken = getToken();
-	return !!jwToken;
-};
 
 const ShopProductGroup = ({ tabSelected }) => {
 	const media = useMedia();
@@ -37,7 +15,6 @@ const ShopProductGroup = ({ tabSelected }) => {
 		products: [],
 		sourceProducts: [],
 	});
-	const [cartNum, setCartNum] = useState(0);
 
 	useEffect(() => {
 		axios.get('/products').then(response => {
@@ -46,62 +23,7 @@ const ShopProductGroup = ({ tabSelected }) => {
 				sourceProducts: response.data,
 			});
 		});
-		updateCartNum();
 	}, []);
-
-	const updateCartNum = async () => {
-		const cartNum = await initCartNum();
-		setCartNum(cartNum);
-	};
-
-	const initCartNum = async () => {
-		const user = getUser() || {};
-		const res = await axios.get('/carts', {
-			params: {
-				userId: user.email,
-			},
-		});
-		const carts = res.data || [];
-		const cartNum = carts.map(cart => cart.mount).reduce((a, value) => a + value, 0);
-		return cartNum;
-	};
-
-	const search = text => {
-		//1.  get New Array
-		let _products = [...products.sourceProducts];
-		//2. Filter New Array 回調函數
-		_products = _products.filter(p => {
-			const matchArray = p.name.match(new RegExp(text, 'gi'));
-			// return matchArray !== null (matchArray不等於空)
-			return !!matchArray;
-		});
-		//3. set State
-		setProducts({ products: _products, sourceProducts: products.sourceProducts });
-	};
-
-	const update = product => {
-		const _products = [...products.products];
-		const _index = _products.findIndex(p => p.id === product.id);
-		_products.splice(_index, 1, product);
-		const _sProducts = [...products.sourceProducts];
-		const _sIndex = _sProducts.findIndex(p => p.id === product.id);
-		_sProducts.splice(_sIndex, 1, product);
-
-		setProducts({
-			products: _products,
-			sourceProducts: _sProducts,
-		});
-	};
-
-	const deleteProduct = id => {
-		const _products = products.products.filter(p => p.id !== id);
-		const _sProducts = products.sourceProducts.filter(p => p.id !== id);
-
-		setProducts({
-			products: _products,
-			sourceProducts: _sProducts,
-		});
-	};
 
 	const shirtsData = [
 		{
@@ -257,46 +179,21 @@ const ShopProductGroup = ({ tabSelected }) => {
 
 	return (
 		<div className={styles.productWrapper}>
-			<ToolBox search={search} cartNum={cartNum} />
 			{tabSelected === 0 ? (
 				<>
-					<ShopProductContent
-						title="CLOTHES"
-						data={shirtsData}
-						updateCartNum={updateCartNum}
-						delete={deleteProduct}
-						update={update}
-					/>
+					<ShopProductContent title="CLOTHES" data={shirtsData} />
 				</>
 			) : tabSelected === 1 ? (
 				<>
-					<ShopProductContent
-						title="JACKETS"
-						data={jacketsData}
-						updateCartNum={updateCartNum}
-						delete={deleteProduct}
-						update={update}
-					/>
+					<ShopProductContent title="JACKETS" data={jacketsData} />
 				</>
 			) : tabSelected === 2 ? (
 				<>
-					<ShopProductContent
-						title="ACCESORY"
-						data={accesoryData}
-						updateCartNum={updateCartNum}
-						delete={deleteProduct}
-						update={update}
-					/>
+					<ShopProductContent title="ACCESORY" data={accesoryData} />
 				</>
 			) : (
 				<>
-					<ShopProductContent
-						title="SHOES"
-						data={shoesData}
-						updateCartNum={updateCartNum}
-						delete={deleteProduct}
-						update={update}
-					/>
+					<ShopProductContent title="SHOES" data={shoesData} />
 				</>
 			)}
 		</div>
