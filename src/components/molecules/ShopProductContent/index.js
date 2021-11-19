@@ -39,24 +39,24 @@ const ShopProductContent = props => {
 	}, []);
 
 	const update = product => {
-		const _products = [...products.products];
+		const _products = [...props.products.products];
 		const _index = _products.findIndex(p => p.id === product.id);
 		_products.splice(_index, 1, product);
-		const _sProducts = [...products.sourceProducts];
+		const _sProducts = [...props.products.sourceProducts];
 		const _sIndex = _sProducts.findIndex(p => p.id === product.id);
 		_sProducts.splice(_sIndex, 1, product);
 
-		setProducts({
+		props.setProducts({
 			products: _products,
 			sourceProducts: _sProducts,
 		});
 	};
 
 	const deleteProduct = id => {
-		const _products = products.products.filter(p => p.id !== id);
-		const _sProducts = products.sourceProducts.filter(p => p.id !== id);
+		const _products = props.products.products.filter(p => p.id !== id);
+		const _sProducts = props.products.sourceProducts.filter(p => p.id !== id);
 
-		setProducts({
+		props.setProducts({
 			products: _products,
 			sourceProducts: _sProducts,
 		});
@@ -81,7 +81,7 @@ const ShopProductContent = props => {
 
 	const search = text => {
 		//1.  get New Array
-		let _products = [...products.sourceProducts];
+		let _products = [...props.products.sourceProducts];
 		//2. Filter New Array 回調函數
 		_products = _products.filter(p => {
 			const matchArray = p.name.match(new RegExp(text, 'gi'));
@@ -89,7 +89,7 @@ const ShopProductContent = props => {
 			return !!matchArray;
 		});
 		//3. set State
-		setProducts({ products: _products, sourceProducts: products.sourceProducts });
+		props.setProducts({ products: _products, sourceProducts: props.products.sourceProducts });
 	};
 
 	return (

@@ -34,19 +34,39 @@ const ShopProductGroup = ({ tabSelected }) => {
 		<div className={styles.productWrapper}>
 			{tabSelected === 0 ? (
 				<>
-					<ShopProductContent title="CLOTHES" data={shirt_products} />
+					<ShopProductContent
+						title="CLOTHES"
+						data={shirt_products}
+						setProducts={setProducts}
+						products={products}
+					/>
 				</>
 			) : tabSelected === 1 ? (
 				<>
-					<ShopProductContent title="JACKETS" data={jacket_products} />
+					<ShopProductContent
+						title="JACKETS"
+						data={jacket_products}
+						setProducts={setProducts}
+						products={products}
+					/>
 				</>
 			) : tabSelected === 2 ? (
 				<>
-					<ShopProductContent title="ACCESORY" data={accesory_products} />
+					<ShopProductContent
+						title="ACCESORY"
+						data={accesory_products}
+						setProducts={setProducts}
+						products={products}
+					/>
 				</>
 			) : (
 				<>
-					<ShopProductContent title="SHOES" data={shoes_products} />
+					<ShopProductContent
+						title="SHOES"
+						data={shoes_products}
+						setProducts={setProducts}
+						products={products}
+					/>
 				</>
 			)}
 		</div>
