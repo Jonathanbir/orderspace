@@ -7,6 +7,8 @@ import { useMedia } from 'util/hook/useMedia';
 import ProductCard from 'components/atoms/ProductCard ';
 import Pagination from 'components/molecules/Pagination';
 import ToolBox from 'components/molecules/ToolBox';
+import Panel from 'components/molecules/Panel';
+import AddInventory from 'components/molecules/AddInventory';
 
 import styles from './index.css';
 
@@ -92,9 +94,33 @@ const ShopProductContent = props => {
 		props.setProducts({ products: _products, sourceProducts: props.products.sourceProducts });
 	};
 
+	const toAdd = () => {
+		Panel.open({
+			component: AddInventory,
+			callback: data => {
+				console.log('products data', data);
+				if (data) {
+					add(data);
+				}
+			},
+		});
+	};
+
+	const add = product => {
+		const _products = [...props.products.products];
+		_products.push(product);
+		const _sProducts = [...props.products.sourceProducts];
+		_sProducts.push(product);
+
+		props.setProducts({
+			products: _products,
+			sourceProducts: _sProducts,
+		});
+	};
+
 	return (
 		<div className={styles.shopCardsGroup}>
-			<ToolBox search={search} cartNum={cartNum} />
+			<ToolBox search={search} cartNum={cartNum} toAdd={toAdd} />
 			<h1>{props.title}</h1>
 			<div className={styles.shopContainer}>
 				<div className={styles.productContainer}>

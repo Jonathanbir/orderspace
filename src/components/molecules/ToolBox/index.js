@@ -5,8 +5,6 @@ import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 import { faPlusSquare } from '@fortawesome/free-solid-svg-icons';
 import Panel from 'components/molecules/Panel';
 import Cart from 'components/molecules/Cart';
-import AddInventory from 'components/molecules/AddInventory';
-
 import styles from './index.css';
 
 class ToolBox extends React.Component {
@@ -50,18 +48,6 @@ class ToolBox extends React.Component {
 		});
 	};
 
-	toAdd = () => {
-		Panel.open({
-			component: AddInventory,
-			callback: data => {
-				console.log('products data', data);
-				if (data) {
-					this.add(data);
-				}
-			},
-		});
-	};
-
 	render() {
 		return (
 			<div>
@@ -70,7 +56,7 @@ class ToolBox extends React.Component {
 						<FontAwesomeIcon
 							className={styles.fontPlusIcon}
 							icon={faPlusSquare}
-							onClick={this.toAdd}
+							onClick={this.props.toAdd}
 						/>
 					</div>
 					<div className="search-box">

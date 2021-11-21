@@ -51,7 +51,7 @@ class EditInventory extends React.Component {
 			<div className="box inventory">
 				<div className="title has-text-centered">Inventory</div>
 				<form onSubmit={this.submit}>
-					<div class="field">
+					<div className="field">
 						<div className="control">
 							<label className="label">Name</label>
 							<textarea

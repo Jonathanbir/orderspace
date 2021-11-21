@@ -76,8 +76,8 @@ const UserLogin = props => {
 						{errors.password && <span>{errors.password.message}</span>}
 					</div>
 				</div>
-				<div class="control">
-					<button class="button is-fullwidth is-danger">Login</button>
+				<div className="control">
+					<button className="button is-fullwidth is-danger">Login</button>
 				</div>
 			</form>
 		</div>
