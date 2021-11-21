@@ -35,10 +35,20 @@ const isLogin = () => {
 
 const ShopProductContent = props => {
 	const [cartNum, setCartNum] = useState(0);
+	const [currentPage, setCurrentPage] = useState(1);
+	const [postPerPage, setPostPerPage] = useState(9);
+	const indexOfLastPast = currentPage * postPerPage;
+	const indexOfFirstPast = indexOfLastPast - postPerPage;
+	const currentPosts = props.data.slice(indexOfFirstPast, indexOfLastPast);
+	const paginate = pageNumber => setCurrentPage(pageNumber);
 
 	useEffect(() => {
 		updateCartNum();
 	}, []);
+
+	useEffect(() => {
+		setCurrentPage(1);
+	}, [props.title]);
 
 	const update = product => {
 		const _products = [...props.products.products];
@@ -98,7 +108,6 @@ const ShopProductContent = props => {
 		Panel.open({
 			component: AddInventory,
 			callback: data => {
-				console.log('products data', data);
 				if (data) {
 					add(data);
 				}
@@ -124,8 +133,8 @@ const ShopProductContent = props => {
 			<h1>{props.title}</h1>
 			<div className={styles.shopContainer}>
 				<div className={styles.productContainer}>
-					{props.data.length > 0 &&
-						props.data.map((_data, idx) => (
+					{currentPosts.length > 0 &&
+						currentPosts.map((_data, idx) => (
 							<ProductCard
 								idx={idx}
 								key={_data.id}
@@ -136,7 +145,13 @@ const ShopProductContent = props => {
 							/>
 						))}
 				</div>
-				<Pagination className="pagination" activePage="1" pages="4" />
+				<Pagination
+					className="pagination"
+					postPerPage={postPerPage}
+					currentPage={currentPage}
+					totalPosts={props.data.length}
+					paginate={paginate}
+				/>
 			</div>
 		</div>
 	);

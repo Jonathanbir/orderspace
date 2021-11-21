@@ -101,7 +101,6 @@ const Header = props => {
 					onKeyPress={() => {}}
 					tabIndex={0}
 					onClick={() => {
-						console.log('home');
 						pushRoute({ pathname: '/' });
 						closeMenu();
 					}}
